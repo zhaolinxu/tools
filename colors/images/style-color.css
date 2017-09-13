@@ -1,0 +1,132 @@
+
+
+A:hover {
+	COLOR: #ff0000; 
+}
+BODY {
+	MARGIN-TOP: 0px; FONT-SIZE: 9pt;
+	background:#353e44 url(bj.gif);
+}
+TD {
+	FONT-SIZE: 9pt
+}
+
+
+.wrap{
+margin:0 auto; 
+width:990px;
+background-color:#ffffff;
+overflow:hidden;
+}
+
+
+
+/******************* top  ******************************/
+.cbody{
+	width:990px;
+	margin:0 auto;
+	background-color:#ffffff;	  
+	
+      display:block;	overflow:hidden;
+}
+
+.top{
+	height:102px;
+	overflow:hidden;
+ margin-bottom:41px;
+	}
+
+.toplogo{
+	float:left;
+	width:230px;
+	margin-top:5px;
+	margin-left:5px;
+overflow:hidden; 
+}
+
+ 
+.topbanner{
+	width:728px;
+	margin-top:5px;
+	margin-left:10px;
+	float:right;
+  display:block;	overflow:hidden;
+}
+ 
+
+.article_address { margin:  2px 0px 12px 0px; color:#666; height:39px; line-height:35px; background:url(5tu.cn_address_bg.gif); border:1px solid #EBEBEB}
+.article_address a { margin:0 8px; color:#666; }
+.article_address span { padding:0 10px; }
+
+/******************* top  ******************************/
+
+
+
+/******************* menu ******************/
+.menu {
+width:990px;
+height:40px;
+margin-top: -41px;line-height:23px;
+margin-left:auto;
+margin-right:auto; 
+border-bottom:solid 2px #818181 !important;
+	border-bottom:solid 2px #818181;
+	background-color:#ffffff;
+}
+
+.menu ul {
+         margin-left:30px !important; 
+		 margin-left:40px;
+      }
+.menu li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+.menu a {
+      float:left;
+      background: url(5tu.cn-menuBg_1.gif) no-repeat 0% 5px;
+      margin:0 2px 0px 0;
+      padding:0 0 0px 5px;
+      text-decoration:none;
+	  
+      }
+.menu a span {
+      float:left;
+      display:block;
+      background: url(5tu.cn-menuBg_2.gif) no-repeat 100% 5px;
+        padding:18px 12px 0px !important; 
+	  padding:18px 15px 0px;
+      color:#fff;
+	font-size:10pt;
+
+	font-family:arial,sans-serif; 
+      }
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.menu a span {float:none;}
+/* End IE5-Mac hack */
+.menu a:hover span {
+      }
+.menu a:hover {
+      background-position:0% -40px;
+      }
+.menu a:hover span {
+      background-position:100% -40px;
+      }
+
+.menu .current a {
+      background-position:0% -60px;
+        }
+.menu .current a span {
+      background-position:100% -60px;
+	  font-weight:bold;
+	  font-size:13px;
+        }
+
+.bd-2{width:990px;height:31px;margin:0 auto;
+background: url(bd--2.gif) no-repeat;
+margin-bottom:5px;}
+.tbback {color:#CFCFCF;}
+.tbback a{color:#CFCFCF;}
+.tbback a:hover {color:#CFCFCF;}
+/******************* menu end ******************************/
