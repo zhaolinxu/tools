@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Firefox的Linear Gradients (线性渐变) -Css3演示</title>
+<link href="Css3-style.css" rel="stylesheet" type="text/css" />
+<link href="slider-v2/slider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="slider-v2/slider.min.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="LinearGradients-moz.js"></script>
+</head>
+<body>
+<div class="pagetitle">
+  <div class="lic"><ul>
+    <li><a href="Box-Shadow.html">Box Shadow(阴影)</a></li>
+    <li><a href="Text-Shadow.html">Text Shadow(文本阴影)</a></li>
+    <li><a href="Text-Stroke.html">Text Stroke(文本描边)和text-fill-color(文本填充色)</a></li>
+    <li><a href="Border-Radius.html">border-radius(圆角)</a></li>
+    <li><a href="Linear-Gradients.html">webkit内核的safari、 Chrome的Linear Gradients (线性渐变) </a></li>
+    <li><a href="Linear-Gradients-moz.html">Firefox的Linear Gradients (线性渐变)</a></li>
+    <li><a href="Transform.html">transform(变形)和transform-origin(变形原点)</a></li>
+    <li><a href="../../demo/flexbox-playground/index.html">CSS3 Flexbox 布局演示</a></li>
+    </ul></div>
+</div>
+
+<div class="pagetitle">
+  <h1>Firefox的Linear Gradients (线性渐变)  -Css3演示</h1>
+  <div class="lic"><a href="../../index.html">WEB前端开发</a></div>
+</div>
+<div class="action-container">
+  <form id="form1" name="form1" method="post" action="">
+    <h2 class="toptit">效果设置区</h2>
+    <div class="action-properties" id="shadow-container1">
+      <h3>基本效果</h3>
+      <div class="property-container">
+        <label cless="label">开始颜色：</label>
+        <input class="color" id="start-color" onchange="linearGradientsMoz.showLinearGradients()" value="999999" maxlength="6" autocomplete="off">
+      </div>
+       <div class="property-container">
+        <label cless="label">结束颜色：</label>
+        <input class="color" id="end-color" onchange="linearGradientsMoz.showLinearGradients()" value="333333" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">水平位移：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsMoz.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="h-position" value="0" maxlength="3" onchange="linearGradientsMoz.showLinearGradients()" />% </div>
+      <div class="property-container">
+        <label cless="label">垂直位移：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsMoz.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="v-position" value="0" maxlength="3" onchange="linearGradientsMoz.showLinearGradients()" />% </div>
+      <div class="property-container">
+        <label cless="label">角度：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsMoz.showLinearGradients fd_range_0_360 fd_slider_cn_theSlider" id="deg-num" value="270" maxlength="3" onchange="linearGradientsMoz.showLinearGradients()" />% </div>
+    </div>
+    
+    <div class="action-properties" id="stop-container1">
+      <h3>停靠</h3>
+      <div class="property-container">
+        <label cless="label">颜色：</label>
+        <input class="color" id="stop-color1" onchange="linearGradientsMoz.showLinearGradients()" value="336600" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">偏移量：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsMoz.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="stop-position1" value="50" maxlength="3" onchange="linearGradientsMoz.showLinearGradients()" />% 
+      </div>
+    </div>
+    <div id="shadow-buttons">
+    <input name="checkbox" type="checkbox" id="demo-box-shadow" checked="checked" onchange="linearGradientsMoz.hasBoxShadow()" />
+      <label for="demo-box-shadow">是否加阴影</label>
+    <span onclick="linearGradientsMoz.delLinearGradients()" class="ourButton">删除停靠</span><span onclick="linearGradientsMoz.addLinearGradients()" class="ourButton">添加停靠</span> </div>
+  </form>
+</div>
+<div class="Preview-container">
+  <h2 class="toptit">效果预览区</h2>
+  <div id="demo" class="has-shadow">
+  
+  </div>
+  <h2 class="toptit">代码区</h2>
+  <div id="code" ></div>
+  <h2 class="toptit">说明</h2>
+  <div id="info-txt">
+  <P class="support"> 
+  <SPAN id="safariSupport"><IMG src="img/safari.png" title="支持 Safari4"  class="supported"><SPAN class="supportVersion">Safari 4</SPAN></SPAN> <SPAN id="firefoxSupport"><IMG src="img/firefox.png" title="支持 Firefox 3.6" class="supported"><SPAN class="supportVersion">Firefox 3.6</SPAN></SPAN> <SPAN id="operaSupport"><IMG src="img/opera.png" title="不支持 Opera 10.5+" class="not-supported"><SPAN class="supportVersion">Opera </SPAN></SPAN> <SPAN id="chromeSupport"><IMG src="img/chrome.png" title=" 支持 Chrome" class="supported"><SPAN class="supportVersion">Chrome </SPAN></SPAN> <SPAN id="ieSupport"><IMG src="img/IE.png" title="不支持 IE8" class="not-supported"><SPAN class="supportVersion">Internet Explorer</SPAN></SPAN> </P>
+  <div class="info-txt">
+    <ul>
+    <li>Firefox的Linear Gradients (线性渐变) 基本语法：background-image:-moz-linear-gradient([&lt;point&gt; | | &lt;angle&gt;，] , 开始颜色值,结束颜色值,  [(停靠颜色值,偏移量百分数),...]  );</li>
+    <li>-moz-linear-gradient是background的一个属性值；</li>
+      <li>第一组参数&lt;角度位置&gt;为非常灵活，他的基本组成点位  &lt;point&gt; （  渐变的出发点  ）和角度；</li>
+      <ul>
+          <li> &lt;point&gt; 渐变的出发点:  它可以被指定为一个百分比，像素，或使用“left”，“center”或“right”的水平和“top”，“center”，或“buttom”的垂直定位。 位置从最受影响的元素左上角。</li>
+          <li> 如果只在水平渐变的话，只要设置：“left center”或“right center”，如果垂直渐变的话设置“center top”或者“center buttom”。Firefox下可以省略掉 “center”，也就是如果只在水平渐变的话，只要设置：“left”或“right”，如果垂直渐变的话设置“top”或者“buttom”。（<a href="Linear-Gradients-moz-exp.html" target="_blank">查看例子</a>）</li>
+          <li>如果这两个值是百分比的值的话，那么第一个是水平渐变位置，第一个是垂直渐变位置，这个时候还需要一个角度值，比如“90deg”；这个可以看本页的例子；</li>
+          <li>还可以是只有一个角度值。（<a href="Linear-Gradients-moz-exp.html" target="_blank">查看例子</a>）</li>
+      </ul>
+      <li> (开始颜色值),(结束颜色值)是两个渐变颜色值；</li>
+      <li>[(停靠颜色值,偏移量百分数),...]：可以使用多个color-stop，如果渐变只有2个颜色，那么可以不使用该参数；偏移量必须为0%~100%；</li>
+      <li>webkit内核的safari、 Chrome下的Linear Gradients (线性渐变) 请参阅：<a href="../../archives/2154.html" target="_blank">http://www.css88.com/archives/2154</a></li>
+      <li>ie下可以使用渐变滤镜，请参阅：  <a href="http://msdn.microsoft.com/en-us/library/ms532997(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532997(VS.85).aspx</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
+<div class="action-properties" id="stop-container" style="display:none">
+      <h3>停靠</h3>
+      <div class="property-container">
+        <label cless="label">颜色：</label>
+        <input class="color" id="stop-color" onchange="linearGradientsMoz.showLinearGradients()" value="336600" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">位置：</label>
+        <input name="textfield" type="text" class="" id="stop-position" value="50" maxlength="3" onchange="linearGradientsMoz.showLinearGradients()" />% 
+      </div>
+    </div>
+</body>
+</html>

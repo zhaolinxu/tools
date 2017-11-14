@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>webkit内核的safari、 Chrome的Linear Gradients (线性渐变) -Css3演示</title>
+<link href="Css3-style.css" rel="stylesheet" type="text/css" />
+<link href="slider-v2/slider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="slider-v2/slider.min.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="LinearGradients-webkit.js"></script>
+</head>
+<body>
+<div class="pagetitle">
+  <div class="lic"><ul>
+    <li><a href="Box-Shadow.html">Box Shadow(阴影)</a></li>
+    <li><a href="Text-Shadow.html">Text Shadow(文本阴影)</a></li>
+    <li><a href="Text-Stroke.html">Text Stroke(文本描边)和text-fill-color(文本填充色)</a></li>
+    <li><a href="Border-Radius.html">border-radius(圆角)</a></li>
+    <li><a href="Linear-Gradients.html">webkit内核的safari、 Chrome的Linear Gradients (线性渐变) </a></li>
+    <li><a href="Linear-Gradients-moz.html">Firefox的Linear Gradients (线性渐变)</a></li>
+    <li><a href="Transform.html">transform(变形)和transform-origin(变形原点)</a></li>
+    <li><a href="../../demo/flexbox-playground/index.html">CSS3 Flexbox 布局演示</a></li>
+    </ul></div>
+</div>
+
+<div class="pagetitle">
+  <h1> webkit内核的safari、  Chrome的Linear Gradients (线性渐变)  -Css3演示</h1>
+  <div class="lic"><a href="../../index.html">WEB前端开发</a></div>
+</div>
+<div class="action-container">
+  <form id="form1" name="form1" method="post" action="">
+    <h2 class="toptit">效果设置区</h2>
+    <div class="action-properties" id="shadow-container1">
+      <h3>开始</h3>
+      <div class="property-container">
+        <label cless="label">颜色：</label>
+        <input class="color" id="start-color" onchange="linearGradientsWebkit.showLinearGradients()" value="999999" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">水平位移(x1)：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsWebkit.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="start-h-position" value="0" maxlength="3" onchange="linearGradientsWebkit.showLinearGradients()" />% </div>
+      <div class="property-container">
+        <label cless="label">垂直位移(y1)：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsWebkit.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="start-v-position" value="0" maxlength="3" onchange="linearGradientsWebkit.showLinearGradients()" />% </div>
+    </div>
+    <div class="action-properties" id="shadow-container1">
+      <h3>结束</h3>
+      <div class="property-container">
+        <label cless="label">颜色：</label>
+        <input class="color" id="end-color" onchange="linearGradientsWebkit.showLinearGradients()" value="333333" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">水平位移(x2)：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsWebkit.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="end-h-position" value="0" maxlength="3" onchange="linearGradientsWebkit.showLinearGradients()" />% </div>
+      <div class="property-container">
+        <label cless="label">垂直位移(y2)：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsWebkit.showLinearGradients fd_range_0_100 fd_slider_cn_theSlider" id="end-v-position" value="100" maxlength="3" onchange="linearGradientsWebkit.showLinearGradients()" />% </div>
+    </div>
+    <div class="action-properties" id="stop-container1">
+      <h3>停靠</h3>
+      <div class="property-container">
+        <label cless="label">颜色：</label>
+        <input class="color" id="stop-color1" onchange="linearGradientsWebkit.showLinearGradients()" value="336600" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">偏移量：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_linearGradientsWebkit.showLinearGradients fd_range_0_1 fd_inc_0d1 fd_slider_cn_theSlider" id="stop-position1" value="0.5" maxlength="3" onchange="linearGradientsWebkit.showLinearGradients()" />
+      </div>
+    </div>
+    <div id="shadow-buttons">
+    <input name="checkbox" type="checkbox" id="demo-box-shadow" checked="checked" onchange="linearGradientsWebkit.hasBoxShadow()" />
+      <label for="demo-box-shadow">是否加阴影</label>
+    <span onclick="linearGradientsWebkit.delLinearGradients()" class="ourButton">删除停靠</span><span onclick="linearGradientsWebkit.addLinearGradients()" class="ourButton">添加停靠</span> </div>
+  </form>
+</div>
+<div class="Preview-container">
+  <h2 class="toptit">效果预览区</h2>
+  <div id="demo" class="has-shadow">
+  
+  </div>
+  <h2 class="toptit">代码区</h2>
+  <div id="code" ></div>
+  <h2 class="toptit">说明</h2>
+  <div id="info-txt">
+  <P class="support"> 
+  <SPAN id="safariSupport"><IMG src="img/safari.png" title="支持 Safari4"  class="supported"><SPAN class="supportVersion">Safari 4</SPAN></SPAN> <SPAN id="firefoxSupport"><IMG src="img/firefox.png" title="支持 Firefox 3.6" class="supported"><SPAN class="supportVersion">Firefox 3.6</SPAN></SPAN> <SPAN id="operaSupport"><IMG src="img/opera.png" title="不支持 Opera 10.5+" class="not-supported"><SPAN class="supportVersion">Opera </SPAN></SPAN> <SPAN id="chromeSupport"><IMG src="img/chrome.png" title=" 支持 Chrome" class="supported"><SPAN class="supportVersion">Chrome </SPAN></SPAN> <SPAN id="ieSupport"><IMG src="img/IE.png" title="不支持 IE8" class="not-supported"><SPAN class="supportVersion">Internet Explorer</SPAN></SPAN> </P>
+  <div class="info-txt">
+    <ul>
+    <li>webkit内核的safari、  Chrome的Linear Gradients (线性渐变) 基本语法：background-image:-webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值),  [color-stop(偏移量小数,停靠颜色值),...]  );</li>
+    <li>-webkit-gradient是background的一个属性值；</li>
+      <li>webkit内核的Linear Gradients (线性渐变) 第一组参数type（类型）为  linear；</li>
+      <li>第二组参数是,x1 y1, x2 y2,当成颜色渐变体的两个点的坐标就是。x1,x2,y1,y2的取值范围为0%-100%，当x1,x2,y1,y2取值为极值的时候，x1和x2可以取值left（或0%）或right（或100%），,y1和y2可以取值top（或0%）或bottom（或100%）；
+        <ul>
+          <li>当x1等于x2，y1不等于y2，实现垂直渐变，调整y1，y2的值可以调整渐变半径大小；</li>
+          <li>当y1等于y2，x1不等于x2，实现水平渐变，调整x1，x2的值可以调整渐变半径大小；</li>
+          <li>当y1不等于y2，x1不等于x2，实现角度渐变，当x1,x2,y1,y2取值为极值的时候<strong>接近</strong>垂直渐变或水平渐变；</li>
+          <li>当x1等于x2，y1等于y2，实现没有渐变，取from色，即“  from(颜色值)  ”；</li>
+        </ul>
+      </li>
+      <li>实现垂直渐变和水平渐变渐变时，x1和x2可以最简单的取值是left（或0%）或right（或100%）,y1和y2可以最简单的取值是top（或0%）或bottom（或100%）；</li>
+      <li> from(开始颜色值),to(结束颜色值)是两个渐变颜色值；</li>
+      <li>[color-stop(偏移量&lt;小数&gt;,停靠颜色值),...]：可以使用多个color-stop，如果渐变只有2个颜色，那么可以不使用该参数；偏移量必须为小数，如果偏移量&gt;=1,那么该color-stop相当于无效；</li>
+      <li>firefox下的Linear Gradients (线性渐变) 请参阅：</li>
+      <li>ie下可以使用渐变滤镜，请参阅：  <a href="http://msdn.microsoft.com/en-us/library/ms532997(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532997(VS.85).aspx</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
+<div class="action-properties" id="stop-container" style="display:none">
+      <h3>停靠</h3>
+      <div class="property-container">
+        <label cless="label">颜色：</label>
+        <input class="color" id="stop-color" onchange="linearGradientsWebkit.showLinearGradients()" value="336600" maxlength="6" autocomplete="off">
+      </div>
+      <div class="property-container">
+        <label cless="label">位置：</label>
+        <input name="textfield" type="text" class="" id="stop-position" value="0.5" maxlength="3" onchange="linearGradientsWebkit.showLinearGradients()" />
+      </div>
+    </div>
+</body>
+</html>

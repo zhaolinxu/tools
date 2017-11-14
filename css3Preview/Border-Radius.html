@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>border-radius(圆角)-Css3演示</title>
+<link href="Css3-style.css" rel="stylesheet" type="text/css" />
+<link href="slider-v2/slider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="slider-v2/slider.min.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="BorderRadius.js"></script>
+</head>
+<body>
+<div class="pagetitle">
+  <div class="lic"><ul>
+    <li><a href="Box-Shadow.html">Box Shadow(阴影)</a></li>
+    <li><a href="Text-Shadow.html">Text Shadow(文本阴影)</a></li>
+    <li><a href="Text-Stroke.html">Text Stroke(文本描边)和text-fill-color(文本填充色)</a></li>
+    <li><a href="Border-Radius.html">border-radius(圆角)</a></li>
+    <li><a href="Linear-Gradients.html">webkit内核的safari、 Chrome的Linear Gradients (线性渐变) </a></li>
+    <li><a href="Linear-Gradients-moz.html">Firefox的Linear Gradients (线性渐变)</a></li>
+    <li><a href="Transform.html">transform(变形)和transform-origin(变形原点)</a></li>
+    <li><a href="../../demo/flexbox-playground/index.html">CSS3 Flexbox 布局演示</a></li>
+    </ul></div>
+</div>
+
+<div class="pagetitle">
+  <h1>Box Shadow(阴影)-Css3演示</h1>
+  <div class="lic"><a href="../../index.html">WEB前端开发</a></div>
+</div>
+<div class="action-container">
+  <form id="form1" name="form1" method="post" action="">
+    <h2 class="toptit">效果设置区</h2>
+    <div class="action-properties" id="shadow-container1">
+      <h3>四角同时设置</h3>
+      <div class="property-container">
+        <label cless="label">圆角半径：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BorderRadius.showAllRadius fd_range_0_10 fd_slider_cn_theSlider" id="all-radius" value="2" maxlength="3" />
+        <select name="" id="all-radius-units" onchange="BorderRadius.showAllRadius();">
+          <option selected="selected">em</option>
+          <option>px</option>
+</select>
+      </div>
+    </div>
+    <div class="action-properties" id="shadow-container1">
+      <h3>四角分别设置</h3>
+      <div class="property-container">
+        <label cless="label">左上圆角半径：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BorderRadius.showRadius fd_range_0_10 fd_slider_cn_theSlider" id="top-left" value="2" maxlength="3" />
+        <select name="" id="top-left-units" onchange="BorderRadius.showRadius();">
+          <option selected="selected">em</option>
+          <option>px</option>
+</select>
+      </div>
+      <div class="property-container">
+        <label cless="label">右上圆角半径：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BorderRadius.showRadius fd_range_0_10 fd_slider_cn_theSlider" id="top-right" value="2" maxlength="3" />
+        <select name=""  id="top-right-units" onchange="BorderRadius.showRadius();">
+        <option selected="selected">em</option>
+          <option>px</option>
+          
+        </select>
+      </div>
+      <div class="property-container">
+        <label cless="label">左下圆角半径：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BorderRadius.showRadius fd_range_0_10 fd_slider_cn_theSlider" id="bottom-left" onchange="BoxShadow.showShadow();" value="2" maxlength="3" />
+        <select name="" id="bottom-left-units" onchange="BorderRadius.showRadius();">
+<option selected="selected">em</option>
+<option>px</option>
+        </select>
+      </div>
+      <div class="property-container">
+        <label cless="label">右下圆角半径：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BorderRadius.showRadius fd_range_0_10 fd_slider_cn_theSlider" id="bottom-right" onchange="BoxShadow.showShadow();" value="2" maxlength="3" />
+        <select name="" id="bottom-right-units" onchange="BorderRadius.showRadius();">
+          <option selected="selected">em</option>
+          <option>px</option>
+</select>
+      </div>
+    </div>
+    
+    <div id="shadow-buttons">
+      <input name="checkbox-shadow" type="checkbox" id="demo-box-shadow" checked="checked" onchange="BorderRadius.hasShadow()" />
+      <label for="demo-box-shadow">是否加阴影</label>
+      <input name="checkbox-border" type="checkbox" id="demo-box-border" onchange="BorderRadius.hasShadow()" />
+     <label for="demo-box-border">是否加边框</label>
+       </div>
+  </form>
+</div>
+<div class="Preview-container">
+  <h2 class="toptit">效果预览区</h2>
+  <div id="demo-radius"></div>
+  <h2 class="toptit">代码区</h2>
+  <div id="code"></div>
+  <h2 class="toptit">说明</h2>
+  <div id="info-txt">
+  <P class="support"> 
+  <SPAN id="safariSupport"><IMG src="img/safari.png" title="支持 Safari 3.1+"  class="supported"><SPAN class="supportVersion">Safari </SPAN></SPAN> 
+  <SPAN id="firefoxSupport"><IMG src="img/firefox.png" title="支持 Firefox 3.5+" class="supported"><SPAN class="supportVersion">Firefox 3.5</SPAN></SPAN> 
+  <SPAN id="operaSupport"><IMG src="img/opera.png" title="支持 Opera 10.5+" class="supported"><SPAN class="supportVersion">Opera 10.5</SPAN></SPAN> 
+  <SPAN id="chromeSupport"><IMG src="img/chrome.png" title=" 支持 Chrome" class="supported"><SPAN class="supportVersion">Chrome </SPAN></SPAN> 
+  <SPAN id="ieSupport"><IMG src="img/IE.png" title="不支持 IE8" class="not-supported"><SPAN class="supportVersion">Internet Explorer</SPAN></SPAN> </P>
+  <div class="info-txt">
+    <ul>
+    <li>border-radius:长度</li>
+      <li>Firefox支持border-radius(圆角)：-moz-border-radius:2px;</li>
+      <li>webkit内核的Safari和Chrome支持border-radius(圆角)：-webkit-border-radius:2px;</li>
+      <li>Opera支持border-radius(圆角)：box-shadow:2px;</li>
+      <li>IE不支持Box Shadow(阴影)</li>
+    </ul><p>
+    	我们还可以随意指定圆角的位置，左上、左下、右上、右下四个方向。在firefox、webkit内核的Safari和Chrome和opera（css3）、中的具体书写格式如下：<br /> 
+
+-moz-border-radius-topleft / -webkit-border-top-left-radius / border-top-left-radius<br /> 
+-moz-border-radius-topright / -webkit-border-top-right-radius / border-top-right-radius<br /> 
+-moz-border-radius-bottomleft / -webkit-border-bottom-left-radius / border-bottom-left-radius<br /> 
+-moz-border-radius-bottomright / -webkit-border-bottom-right-radius /border-bottom-right-radius
+    </p><p>border-radius(圆角)还有其他一些用法，Firefox、webkit内核的Safari和Chrome和opera（css3）其他写法有些略微的差异，具体可以查看以下网址：
+	<a href="https://developer.mozilla.org/en/CSS:-moz-border-radius" target="_block">https://developer.mozilla.org/en/CSS:-moz-border-radius</a><br />
+	<a href="http://www.the-art-of-web.com/css/border-radius/" target="_block">http://www.the-art-of-web.com/css/border-radius/</a><br />
+	<a href="http://dancewithnet.com/2008/12/27/border-radius-and-rounded-corner/"  target="_block">http://dancewithnet.com/2008/12/27/border-radius-and-rounded-corner/</a>
+	</p>
+	
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

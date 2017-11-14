@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Text Shadow(文本阴影)-Css3演示</title>
+<link href="Css3-style.css" rel="stylesheet" type="text/css" />
+<link href="slider-v2/slider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="slider-v2/slider.min.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="TextShadow.js"></script>
+</head>
+<body>
+<div class="pagetitle">
+  <div class="lic"><ul>
+    <li><a href="Box-Shadow.html">Box Shadow(阴影)</a></li>
+    <li><a href="Text-Shadow.html">Text Shadow(文本阴影)</a></li>
+    <li><a href="Text-Stroke.html">Text Stroke(文本描边)和text-fill-color(文本填充色)</a></li>
+    <li><a href="Border-Radius.html">border-radius(圆角)</a></li>
+    <li><a href="Linear-Gradients.html">webkit内核的safari、 Chrome的Linear Gradients (线性渐变) </a></li>
+    <li><a href="Linear-Gradients-moz.html">Firefox的Linear Gradients (线性渐变)</a></li>
+    <li><a href="Transform.html">transform(变形)和transform-origin(变形原点)</a></li>
+    <li><a href="../../demo/flexbox-playground/index.html">CSS3 Flexbox 布局演示</a></li>
+    </ul></div>
+</div>
+
+<div class="pagetitle">
+  <h1>Text Shadow(文本阴影)-Css3演示</h1>
+  <div class="lic"><a href="../../index.html">WEB前端开发</a></div>
+</div>
+<div class="action-container">
+  <form id="form1" name="form1" method="post" action="">
+    <h2 class="toptit">效果设置区</h2>
+    <div class="property-container">
+        <label cless="label">文字颜色：</label>
+        <input class="color" id="demo-text-color" onchange="BoxShadow.checkTxtColor()" value="333333" maxlength="6" autocomplete="off">
+      </div>
+    <div class="action-properties" id="shadow-container1">
+      <h3>文本阴影1</h3>
+      <div class="property-container">
+        <label cless="label">水平位移：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BoxShadow.showShadow fd_range_-10_10 fd_slider_cn_theSlider" id="h-offset1" value="2" maxlength="3" />
+        <select name="" id="h-offset-units1" onchange="BoxShadow.showShadow();">
+          <option>px</option>
+          <option>em</option>
+        </select>
+      </div>
+      <div class="property-container">
+        <label cless="label">垂直位移：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BoxShadow.showShadow fd_range_-10_10 fd_slider_cn_theSlider" id="v-offset1" value="2" maxlength="3" />
+        <select name=""  id="v-offset-units1" onchange="BoxShadow.showShadow();">
+          <option>px</option>
+          <option>em</option>
+        </select>
+      </div>
+      <div class="property-container">
+        <label cless="label">模糊半径：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_BoxShadow.showShadow fd_range_0_20 fd_slider_cn_theSlider" id="blur1" onchange="BoxShadow.showShadow();" value="5" maxlength="3" />
+        <select name="" id="blur-units1" onchange="BoxShadow.showShadow();">
+          <option>px</option>
+          <option>em</option>
+        </select>
+      </div>
+      <div class="property-container">
+        <label cless="label">阴影颜色：</label>
+        <input class="color" id="shadow-color1" onchange="BoxShadow.showShadow()" value="333333" maxlength="6" autocomplete="off">
+      </div>
+    </div>
+    
+    <div id="shadow-buttons">
+      <span onclick="BoxShadow.deleteShadow()" class="ourButton">删除阴影</span><span onclick="BoxShadow.addShadow()" class="ourButton">添加阴影</span> </div>
+  </form>
+</div>
+<div class="Preview-container">
+  <h2 class="toptit">效果预览区</h2>
+  <div id="demo">Text Shadow(文本阴影)-Css3演示</div>
+  <h2 class="toptit">代码区</h2>
+  <div id="code">-moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333</div>
+  <h2 class="toptit">说明</h2>
+  <div id="info-txt">
+  <P class="support"> 
+  <SPAN id="safariSupport"><IMG src="img/safari.png" title="支持 Safari 3.1+"  class="supported"><SPAN class="supportVersion">Safari 1.1</SPAN></SPAN> <SPAN id="firefoxSupport"><IMG src="img/firefox.png" title="支持 Firefox 3.5+" class="supported"><SPAN class="supportVersion">Firefox 3.5</SPAN></SPAN> <SPAN id="operaSupport"><IMG src="img/opera.png" title="支持 Opera 10.5+" class="supported"><SPAN class="supportVersion">Opera 9</SPAN></SPAN> <SPAN id="chromeSupport"><IMG src="img/chrome.png" title=" 支持 Chrome" class="supported"><SPAN class="supportVersion">Chrome </SPAN></SPAN> <SPAN id="ieSupport"><IMG src="img/IE.png" title="不支持 IE8" class="not-supported"><SPAN class="supportVersion">Internet Explorer</SPAN></SPAN> </P>
+  <div class="info-txt">
+    <ul>
+    <li>css2的时候已经有了text-shadow这个属性，但是css2.1的又删除了这个属性，css3又重新使用了这个属性；</li>
+    <li>text-shadow:阴影水平偏移值（可取正负值）； 阴影垂直偏移值（可取正负值）；阴影模糊值；阴影颜色</li>
+      <li>Firefox,webkit内核的Safari和Chrome,Opera支持Text Shadow(文本阴影)：text-shadow:2px 2px 5px #333333</li>
+      <li>一个文本可以使用多个文本阴影</li>
+      <li>IE不支持text-shadow(阴影)</li>
+    </ul>
+  </div>
+  </div>
+</div>
+<div class="action-properties" id="shadow-container" style="display:none">
+  <h3>阴影</h3>
+  <div class="property-container">
+    <label cless="label">水平位移：</label>
+    <input name="textfield" type="text" class="" id="h-offset" value="2" maxlength="3" />
+    <select name="" id="h-offset-units" onchange="BoxShadow.showShadow();">
+      <option>px</option>
+      <option>em</option>
+    </select>
+  </div>
+  <div class="property-container">
+    <label cless="label">垂直位移：</label>
+    <input name="textfield" type="text" class="" id="v-offset" value="2" maxlength="3" />
+    <select name=""  id="v-offset-units" onchange="BoxShadow.showShadow();">
+      <option>px</option>
+      <option>em</option>
+    </select>
+  </div>
+  <div class="property-container">
+    <label cless="label">模糊半径：</label>
+    <input name="textfield" type="text" class="" id="blur" onchange="BoxShadow.showShadow();" value="5" maxlength="3" />
+    <select name="" id="blur-units" onchange="BoxShadow.showShadow();">
+      <option>px</option>
+      <option>em</option>
+    </select>
+  </div>
+  <div class="property-container">
+    <label cless="label">阴影颜色：</label>
+    <input class="color" id="shadow-color" onchange="BoxShadow.showShadow()" value="333333" maxlength="6" autocomplete="off">
+  </div>
+</div>
+</body>
+</html>

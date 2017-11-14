@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Text Stroke(文本阴影)-Css3演示</title>
+<link href="Css3-style.css" rel="stylesheet" type="text/css" />
+<link href="slider-v2/slider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="slider-v2/slider.min.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="TextStroke.js"></script>
+</head>
+<body>
+<div class="pagetitle">
+  <div class="lic"><ul>
+    <li><a href="Box-Shadow.html">Box Shadow(阴影)</a></li>
+    <li><a href="Text-Shadow.html">Text Shadow(文本阴影)</a></li>
+    <li><a href="Text-Stroke.html">Text Stroke(文本描边)和text-fill-color(文本填充色)</a></li>
+    <li><a href="Border-Radius.html">border-radius(圆角)</a></li>
+    <li><a href="Linear-Gradients.html">webkit内核的safari、 Chrome的Linear Gradients (线性渐变) </a></li>
+    <li><a href="Linear-Gradients-moz.html">Firefox的Linear Gradients (线性渐变)</a></li>
+    <li><a href="Transform.html">transform(变形)和transform-origin(变形原点)</a></li>
+    <li><a href="../../demo/flexbox-playground/index.html">CSS3 Flexbox 布局演示</a></li>
+    </ul></div>
+</div>
+
+<div class="pagetitle">
+  <h1>Text Stroke(文本描边)和text-fill-color(文本填充色)-Css3演示</h1>
+  <div class="lic"><a href="../../index.html">WEB前端开发</a></div>
+</div>
+<div class="action-container">
+  <form id="form1" name="form1" method="post" action="">
+    <h2 class="toptit">效果设置区</h2>
+    <div class="action-properties" id="shadow-container1">
+      <h3>文本颜色</h3>
+    <div class="property-container">
+        <label cless="label">文本颜色：</label>
+        <input class="color" id="demo-text-color" onchange="TextStroke.checkTxtColor()" value="666666" maxlength="6" autocomplete="off"></div>
+    <div class="property-container" id="demo-fill-color">
+    <input name="radio" type="radio" value="transparent" onchange="TextStroke.checkTxtColor()" />
+      <label>文本透明</label>
+          <input name="radio" type="radio"  value="fill" checked="checked" onchange="TextStroke.checkTxtColor()" />
+		<label>是否使用文本填充色</label>
+        <input class="color" id="fill-color" onchange="TextStroke.checkTxtColor()" value="FFFFFF" maxlength="6" autocomplete="off">
+      </div>    
+    </div>
+    <div class="action-properties" id="shadow-container1">
+      <h3>文本描边</h3>
+      <div class="property-container">
+        <label cless="label">描边宽度：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_TextStroke.showStroke fd_range_0d1_5 fd_inc_0d1 fd_slider_cn_theSlider" id="stroke-width" value="1" maxlength="3" />
+        <select name="" id="stroke-width-units" onchange="TextStroke.showStroke();">
+          <option>px</option>
+          <option>em</option>
+        </select>
+      </div>
+      
+      <div class="property-container">
+        <label cless="label">描边颜色：</label>
+        <input class="color" id="stroke-color" onchange="TextStroke.showStroke()" value="000000" maxlength="6" autocomplete="off">
+      </div>
+      
+    </div>
+    
+    
+  </form>
+</div>
+<div class="Preview-container">
+  <h2 class="toptit">效果预览区</h2>
+  <div id="demo-stroke">Text Shadow(文本阴影)-Css3演示</div>
+  <h2 class="toptit">代码区</h2>
+  <div id="code"></div>
+  <h2 class="toptit">说明</h2>
+  <div id="info-txt">
+  <P class="support"> 
+  <SPAN id="safariSupport"><IMG src="img/safari.png" title="支持 Safari 3.1+"  class="supported"><SPAN class="supportVersion">Safari 4</SPAN></SPAN> <SPAN id="firefoxSupport"><IMG src="img/firefox.png" title="不支持 Firefox" class="not-supported"><SPAN class="supportVersion">Firefox</SPAN></SPAN> <SPAN id="operaSupport"><IMG src="img/opera.png" title="不支持 Opera" class="not-supported"><SPAN class="supportVersion">Opera </SPAN></SPAN> <SPAN id="chromeSupport"><IMG src="img/chrome.png" title=" 支持 Chrome" class="supported"><SPAN class="supportVersion">Chrome </SPAN></SPAN> <SPAN id="ieSupport"><IMG src="img/IE.png" title="不支持 IE8" class="not-supported"><SPAN class="supportVersion">Internet Explorer</SPAN></SPAN> </P>
+  <div class="info-txt">
+    <ul>
+    <li>目前这两个属性只有webkit内核的Safari和Chrome支持，例如：  -webkit-text-stroke: 3.3px #2A75BF;  </li>
+    <li>text-fill-color：颜色值，和color属性差不多都是文字的样式；</li>
+    <li>同时使用text-fill-color和color属性，text-fill-color将覆盖color属性的颜色值；</li>
+    <li>text-fill-color可以使用透明值，即：text-fill-color：transparent</li>
+    </ul>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

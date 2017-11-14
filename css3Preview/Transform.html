@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>transform(变形)和transform-origin(变形原点)-Css3演示</title>
+<link href="Css3-style.css" rel="stylesheet" type="text/css" />
+<link href="slider-v2/slider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="slider-v2/slider.min.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="Transform.js"></script>
+</head>
+<body>
+<div class="pagetitle">
+  <div class="lic"><ul>
+    <li><a href="Box-Shadow.html">Box Shadow(阴影)</a></li>
+    <li><a href="Text-Shadow.html">Text Shadow(文本阴影)</a></li>
+    <li><a href="Text-Stroke.html">Text Stroke(文本描边)和text-fill-color(文本填充色)</a></li>
+    <li><a href="Border-Radius.html">border-radius(圆角)</a></li>
+    <li><a href="Linear-Gradients.html">webkit内核的safari、 Chrome的Linear Gradients (线性渐变) </a></li>
+    <li><a href="Linear-Gradients-moz.html">Firefox的Linear Gradients (线性渐变)</a></li>
+    <li><a href="Transform.html">transform(变形)和transform-origin(变形原点)</a></li>
+    <li><a href="../../demo/flexbox-playground/index.html">CSS3 Flexbox 布局演示</a></li>
+    </ul></div>
+</div>
+
+<div class="pagetitle">
+  <h1>transform(变形)和transform-origin(变形原点)-Css3演示</h1>
+  <div class="lic"><a href="../../index.html">WEB前端开发</a></div>
+</div>
+<div class="action-container">
+  <form id="form1" name="form1" method="post" action="">
+    <h2 class="toptit">效果设置区</h2>
+    <div class="action-properties" id="shadow-container1">
+      <h3>变形原点</h3>
+   <div class="property-container">
+        <label cless="label">X轴原点位置：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-100_100 fd_slider_cn_theSlider" id="originX" value="0" maxlength="3" onchange="Transform.showTransform();" />
+        <select name="" id="originX-units" onchange="Transform.showTransform();">
+        <option selected="selected">%</option>
+          <option>px</option>
+          <option>em</option>
+        </select>
+   </div>
+    <div class="property-container">
+        <label cless="label">X轴原点位置：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-100_100  fd_slider_cn_theSlider" id="originY" value="0" maxlength="3" onchange="Transform.showTransform();" />
+        <select name="" id="originY-units" onchange="Transform.showTransform();">
+        <option selected="selected">%</option>
+          <option>px</option>
+          <option>em</option>
+        </select>
+   </div>  
+    </div>
+    <div class="action-properties" id="shadow-container1">
+      <h3>变形参数</h3>
+      <div class="property-container">
+        <label cless="label">旋转角度：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-360_360 fd_slider_cn_theSlider" id="rotate" value="0" maxlength="4" onchange="Transform.showTransform();" />
+      </div>
+      <div class="property-container">
+        <label cless="label">X轴缩放大小：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-3_3 fd_inc_0d05 fd_slider_cn_theSlider" id="scaleX" value="1.00" maxlength="5" onchange="Transform.showTransform();" />
+      </div>
+      <div class="property-container">
+        <label cless="label">Y轴缩放大小：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-3_3 fd_inc_0d05 fd_slider_cn_theSlider" id="scaleY" value="1.00" maxlength="5" onchange="Transform.showTransform();" />
+      </div>
+      <div class="property-container">
+        <label cless="label">X轴定位：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-100_100  fd_slider_cn_theSlider" id="translateX" value="0" maxlength="3" onchange="Transform.showTransform();" />
+        <select name="" id="translateX-units" onchange="Transform.showTransform();">
+        <option selected="selected">px</option>
+          <option>em</option>
+        </select>
+   </div>
+    <div class="property-container">
+        <label cless="label">Y轴定位：</label>
+        <input name="textfield" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-100_100  fd_slider_cn_theSlider" id="translateY" value="0" maxlength="3" onchange="Transform.showTransform();" />
+        <select name="" id="translateY-units" onchange="Transform.showTransform();">
+        <option selected="selected">px</option>
+          <option>em</option>
+        </select>
+   </div>
+   <div class="property-container">
+        <label cless="label">X轴倾斜：</label>
+        <input name="rotate" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-360_360 fd_slider_cn_theSlider" id="skewX" value="0" maxlength="4" onchange="Transform.showTransform();" />
+   </div>
+      <div class="property-container">
+        <label cless="label">Y轴倾斜：</label>
+        <input name="rotate2" type="text" class="fd_slider_cn_halfSize fd_tween fd_tween fd_slider_cb_update_Transform.showTransform fd_range_-360_360 fd_slider_cn_theSlider" id="skewY" value="0" maxlength="4" onchange="Transform.showTransform();" />
+      </div> 
+    </div>
+  <div id="shadow-buttons">
+    <input name="checkbox" type="checkbox" id="demo-box-shadow" checked="checked" onchange="Transform.hasBoxShadow()" />
+      <label for="demo-box-shadow">是否加阴影</label>
+      
+     </div>  
+    
+  </form>
+</div>
+<div class="Preview-container">
+  <h2 class="toptit">效果预览区</h2>
+  <div id="demo">
+    transform(变形)和transform-origin(变形原点)
+-Css3演示</div>
+  <h2 class="toptit">代码区</h2>
+  <div id="code"></div>
+  <h2 class="toptit">说明</h2>
+  <div id="info-txt">
+  <P class="support"> 
+  <SPAN id="safariSupport"><IMG src="img/safari.png" title="支持 Safari 3.1+"  class="supported"><SPAN class="supportVersion">Safari 4</SPAN></SPAN> <SPAN id="firefoxSupport"><IMG src="img/firefox.png" title="不支持 Firefox" class="supported"><SPAN class="supportVersion">Firefox3.5</SPAN></SPAN> <SPAN id="operaSupport"><IMG src="img/opera.png" title="不支持 Opera" class="supported"><SPAN class="supportVersion">Opera10.5 </SPAN></SPAN> <SPAN id="chromeSupport"><IMG src="img/chrome.png" title=" 支持 Chrome" class="supported"><SPAN class="supportVersion">Chrome </SPAN></SPAN> <SPAN id="ieSupport"><IMG src="img/IE.png" title="不支持 IE8" class="not-supported"><SPAN class="supportVersion">Internet Explorer</SPAN></SPAN> </P>
+  <div class="info-txt">
+    <ul>
+    <li>目前这两个属性得到了除去ie以外各个主流浏览器webkit，firefox，opera的支持，属性名分别为  -webkit-transform，-moz-transform，-o-transform;  </li>
+    <li>transform-origin是变形原点，也就是该元素围绕着那个点变形或旋转，该属性只有在设置了transform属性的时候起作用；
+    <ul>
+      <li>语法：-moz-transform-origin:  [ &lt;percentage&gt; | &lt;length&gt; | left | center | right ][ &lt;percentage&gt; | &lt;length&gt; | top | center | bottom ] ?
+      </li>
+      <li> transform-origin接受两个参数，它们可以是百分比，em，px等具体的值，也可以是left,center,right，或者 top,center,bottom等描述性参数 ;</li>
+      <li>top left | left top 等价于 0 0；</li>
+      <li>top | top center | center top 等价于 50% 0</li>
+      <li>right top | top right 等价于 100% 0</li>
+      <li>left | left center | center left 等价于 0 50%</li>
+      <li>center | center center 等价于 50% 50%（默认值）</li>
+      <li>right | right center | center right 等价于 100% 50%</li>
+      <li>bottom left | left bottom 等价于 0 100%</li>
+      <li>bottom | bottom center | center bottom 等价于 50% 100%</li>
+      <li>bottom right | right bottom 等价于 100% 100%</li>
+    </ul>
+    </li>
+    <li> transform属性实现了一些可用<a href="http://www.w3.org/Graphics/SVG/">SVG</a>实现的同样的功能。它可用于内联(inline)元素和块级(block)元素。它允许我们旋转、缩放和移动元素 ，他有几个属性值参数：
+      <ul>
+        <li> <strong>rotate</strong>(旋转)允许你通过传递一个度数值来转动一个对象；</li>
+        <li> <strong>scale</strong>是一个缩放功能，可以让任一元素变的更大。它使用一个或者两个正数和负数以及小数作为参数；当使用一个参数时表示X轴和Y轴的缩放相同； </li>
+        <li> <strong>translate</strong>就是基于X和Y 坐标重新定位元素，当使用一个参数时表示X轴和Y轴的参数相同；</li>
+        <li> <strong>skew</strong>倾斜（ps中的斜切），参数是度数，当使用一个参数时表示X轴和Y轴的参数相同； </li>
+        <li> <strong>matrix</strong>矩阵变换，就是基于X和Y 坐标重新定位元素，它使用6个参数 ，本例中未涉及；</li>
+      </ul>
+    </li>
+    </ul>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>
