@@ -1,0 +1,23 @@
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
+h1,h2,h3,h4,h5,h6,p {
+	font-weight: normal;
+	margin: 0;
+}
+ul,dl,dd {
+	padding: 0;
+	margin: 0;
+}
+i,img {
+	vertical-align: middle;
+}

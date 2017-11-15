@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<audio id="media" src="Just A Kiss.mp3"></audio>
+		<!--start audio-->
+		<div class="pregrass">
+			<div id="pregrassbg">
+				<div id="pregrasscolor"></div>
+			</div>
+			<span id="playTime">0:00</span>
+			<span id="surplusTime">-0:00</span>
+		</div>
+		<div class="controls">
+			<span id="play" class="on"></span>
+		</div>
+		<!--end audio-->
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<script>
+			$('document').ready(function() {
+    //---------------------------------------------初始化
+    var mediaSource = [{
+        title: '浮光掠影',
+        srcMedia: 'ablum/浮光掠影.mp3'
+    }, {
+        title: 'Just A Kiss',
+        srcMedia: 'ablum/Just A Kiss.mp3'
+    }, {
+        title: '关忆北',
+        srcMedia: 'ablum/关忆北.mp3'
+    }, {
+        title: '知足',
+        srcMedia: 'ablum/知足.mp3'
+    }, {
+        title: 'wish',
+        srcMedia: 'ablum/wish.mp3'
+    }, {
+        title: '当我离开你的时候',
+        srcMedia: 'ablum/当我离开你的时候.mp3'
+    }];
+  
+  
+    var init = function() {
+  
+            var initData = {
+                media       : '#media',
+                xStart      : '#pregrassbg',
+                bgWidth     : '#pregrassbg',
+                oplay       : '#play',
+                precolor    : '#pregrasscolor',
+                playTime    : '#playTime',
+                surplusTime : '#surplusTime',
+                plist       : '#plist',
+                title       : '#title',
+                autoPlay    : true,
+                meSou       : mediaSource
+            }
+            //创建音频对象
+            mymedia = new PlayAudio(initData);
+  
+            //绑定播放暂停控制
+            $('#play').bind('click', function() {
+                mymedia.playAudio();
+            });
+            //绑定定位歌曲控制
+            $('#pregrassbg').bind('click', function(e) {
+                mymedia.localProgress(e);
+            });
+            //绑定列表播放
+            $('#plist li').live('click', function(e) {
+                mymedia.chooseMedia($(this));
+            });
+            //绑定音频播放结束
+            $('#media').bind('ended', function() {
+                mymedia._ended();
+            })
+            $('#prev').bind('click', function() {
+                mymedia.prevMedia();
+            })
+            $('#next').bind('click', function() {
+                mymedia.nextMedia();
+  
+            })
+            //载入window 时初似乎定时器
+            $(window).bind('load', function() {
+                mymedia.openInter();
+                mymedia.loadWindow();
+            })
+        }()
+        //----------------------------------------------音频播放构造函数
+  
+    function PlayAudio(initObj) {
+  
+        this.media       = $(initObj.media)[0];
+        this.xStart      = $(initObj.xStart).offset();;
+        this.bgWidth     = $(initObj.bgWidth).width();;
+        this.oplay       = $(initObj.oplay);;
+        this.precolor    = $(initObj.precolor);
+        this.playTime    = $(initObj.playTime);
+        this.surplusTime = $(initObj.surplusTime);
+        this.plist       = $(initObj.plist);
+        this.title       = $(initObj.title);
+        this.autoPlay    = initObj.autoPlay;
+        this.meSou       = initObj.meSou;
+        this.mediaLength = this.meSou.length;
+          
+        that             = this;
+        this.timer       = null;
+        this.mediaIndex  = 0;
+        //window改变是处理播放条位置
+        $(window).bind("resize", function() {
+            that.xStart = $('#pregrassbg').offset();
+        });
+    }
+    //===============================================播放暂停控制
+    PlayAudio.prototype.playAudio = function() {
+        if(this.media.paused) {
+            this._play(this.oplay);
+        } else {
+            this._pause(this.oplay)
+        }
+    }
+    //===============================================定位歌曲的方法    
+    PlayAudio.prototype.localProgress = function(e) {
+        this._play(this.oplay);
+        var scale = (e.pageX - this.xStart.left) / this.bgWidth;
+        var duraTimes = this.media.duration;
+        this.media.currentTime = duraTimes * scale;
+        this.precolor.width(this.bgWidth * scale);
+    }
+    //===============================================开启定时器，更像进度条
+    PlayAudio.prototype.openInter = function() {
+        if(this.timer != null) {
+            clearInterval(this.timer);
+        }
+        var _this = this; //定时器会改变 this
+        this.timer = setInterval(function() {
+            _this._update();
+        }, 1000);
+    }
+    //==============================================更新入口
+    PlayAudio.prototype._update = function() {
+        this._updateProgress();
+        this._updatTime();
+    }
+    //===============================================进度条更新方法
+    PlayAudio.prototype._updateProgress = function() {
+        var duraTime = media.duration;
+        var curTime  = media.currentTime;
+        var scale    = curTime / duraTime;
+        this.precolor.width(this.bgWidth * scale);
+    }
+    //===============================================时间更新方法
+    PlayAudio.prototype._updatTime = function() {
+        var duraTime = media.duration;
+        var curTime  = media.currentTime;
+        if(duraTime == NaN) {
+            duraTime = 0;
+        }
+        var leftTime  = parseInt(curTime);
+        var rughtTime = parseInt(duraTime - curTime);
+        this.playTime.html(this._converToTime(leftTime));
+        this.surplusTime.html(this._converToTime(rughtTime));
+    }
+    //===============================================播放函数
+    PlayAudio.prototype._play = function(obj) {
+        this.media.play();
+        this.title.siblings().text('正在播放：');
+        this.openInter();
+        obj.attr('class', 'pause');
+    }
+    //===============================================暂停函数
+    PlayAudio.prototype._pause = function(obj) {
+        this.media.pause();
+        clearInterval(this.timer);
+        obj.attr('class', 'on');
+    }
+    //===============================================播放完毕
+    PlayAudio.prototype._ended = function() {
+        if(this.autoPlay) {
+            this.mediaIndex++;
+            if(this.mediaIndex == this.mediaLength) {
+                alert('已经是最后一首了');
+                this._endedStyle();
+                return;
+            }
+            this._playlist(this.mediaIndex);
+        } else {
+            this._endedStyle();
+        }
+    }
+    //==============================================
+    PlayAudio.prototype._endedStyle = function() {
+        this.precolor.width(0);
+        this.surplusTime.html(this._converToTime(parseInt(media.duration)));
+        this._pause(this.oplay);
+        this.playTime.html('0:00');
+    }
+    //===============================================选择列表列表
+    PlayAudio.prototype.chooseMedia = function(obj) {
+        var item = obj.attr('data-index');
+        this.mediaIndex = item;
+        this._playlist(item);
+    }
+    //===============================================上一曲
+    PlayAudio.prototype.nextMedia = function() {
+        this.mediaIndex++;
+        if(this.mediaIndex == this.mediaLength) {
+            alert('已经是最后一首了');
+            this._pause(this.oplay);
+            this.mediaIndex = this.mediaLength - 1;
+            return;
+        }
+        this._playlist(this.mediaIndex);
+    }
+    //===============================================下一曲
+    PlayAudio.prototype.prevMedia = function() {
+        if(this.mediaIndex == 0) {
+            alert('已经是第一首了');
+            this._pause(this.oplay);
+            this.mediaIndex = 0;
+            this.flag = true;
+            return;
+        }
+        this.mediaIndex--;
+        this._playlist(this.mediaIndex);
+    }
+    //================================================窗口初始化,生成列表
+    PlayAudio.prototype.loadWindow = function() {
+        this.media.src = this.meSou[0].srcMedia;
+        var html = '';
+        for(var item in this.meSou) {
+            html += '<li data-index="' + item + '">' + this.meSou[item].title + '</li>';
+        }
+        this.plist.append(html);
+        this.title.text(this.meSou[0].title);
+        this.plist.children().eq(0).css({
+            'background': '#eee',
+            'color': '#f80'
+        });
+    }
+    //================================================更新 url 地址函数
+    PlayAudio.prototype._playlist = function(currIndex) {
+        this.media.src = this.meSou[currIndex].srcMedia;
+        this._play(this.oplay);
+        this.plist.children().eq(currIndex).css({
+            'background': '#eee',
+            'color': '#f80'
+        }).siblings().css({
+            'background': '#fff',
+            'color': '#000'
+        });
+        this.title.text(this.meSou[currIndex].title);
+    }
+    //================================================工具函数，将秒转换为分钟
+    PlayAudio.prototype._converToTime = function(time) {
+        //将剩余秒数转化为分钟
+        var min = Math.floor((time / 60) % 60);
+        //将剩余秒数转化为秒钟
+        var sec = Math.floor(time % 60);
+        var cTime;
+        if(sec < 10) {
+            sec = '0' + sec;
+        }
+        cTime = min + ':' + sec
+        return cTime;
+    }
+})
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>图片翻转效果</title>
+<link rel="stylesheet" href="../css/animate.min.css" />
+<style>
+* { margin: 0; padding: 0;}
+ul { list-style-type: none;}
+body { font: 14px "Microsoft Yahei"; overflow-x: hidden; background-color: #2B2B2B; }
+h1 { width: 900px; margin: 40px auto 100px; font: 32px "Microsoft Yahei"; text-align: center; color: #D3D3D3; }
+
+
+@-webkit-keyframes flipOutYtest {
+  from {
+    -webkit-transform: perspective(1400px);
+    transform: perspective(1400px);
+  }
+
+  40% {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, 60deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, 60deg);
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, 180deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, 180deg);
+    opacity: 0;
+  }
+}
+
+.test{
+  -webkit-animation: flipOutYtest 0.75s linear;
+  animation: flipOutYtest 0.75s linear;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes flipInYtest {
+  from {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, -180deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, -180deg);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, -90deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, -90deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: perspective(1400px) rotate3d(0, 1, 0, -60deg);
+    transform: perspective(1400px) rotate3d(0, 1, 0, -60deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(1400px);
+    transform: perspective(1400px);
+    opacity: 1;
+  }
+}
+
+.test2{
+  -webkit-animation: flipInYtest 0.75s linear;
+  animation: flipInYtest 0.75s linear;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+
+.well{ width: 1000px;  min-height: 250px;/*  margin: auto;
+  min-width: 1250px;
+  column-width: 250px;
+  -webkit-column-width: 250px;
+  -webkit-column-gap: 0px;
+  column-gap: 0px;*/ margin-left: auto; margin-right: auto; height: auto; }
+
+.well .well-item{ position: relative; float: left; width: 23%; min-height: 250px; margin: 1%; }
+.well .well-item img{
+  width: 100%;
+  min-height: 250px;
+}
+.correct{
+  position: absolute;
+  width: 100%;
+}
+.opposite{
+  min-height: 250px;
+  width: 100%;
+}
+.opposite div{
+  min-height: 250px;
+  width: 100%;
+}
+.opposite-content{
+  display: table;
+  width: 100%;
+  min-height: 250px;
+  background-color: #D95E22;
+}
+.opposite-content-text{ display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 24px; }
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+<script>
+$(function(){
+	var $animate = $('#animate');
+	var $opposite = $('#opposite');
+	$(".wrap").hover(function(){
+		$animate.removeClass();
+		$opposite.removeClass();
+		$animate.addClass("test");
+		$opposite.addClass('test2');
+	},function(){
+		$animate.removeClass();
+		$opposite.removeClass();
+		$animate.addClass("test2");
+		$opposite.addClass('test');
+	});
+
+	$(".well-item").hover(function(){
+		$(this).find(".correct").children().removeClass();
+		$(this).find(".opposite").children().removeClass();
+		$(this).find(".correct").children().addClass("test");
+		$(this).find(".opposite").children().addClass('test2');
+	},function(){
+		$(this).find(".correct").children().removeClass();
+		$(this).find(".opposite").children().removeClass();
+		$(this).find(".correct").children().addClass("test2");
+		$(this).find(".opposite").children().addClass('test');
+	});
+
+});
+</script>
+</head>
+
+<body>
+<h1>图片翻转效果</h1>
+<div class="well">
+	<div class="well-item">
+		<div class="correct"><img  class="" src="images/1.jpg" /></div>
+		<div class="opposite">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						请我吃烤鱼！
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="well-item">
+		<div class="correct"><img  class="" src="images/2.jpg" /></div>
+		<div class="opposite">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						请我吃火锅！
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="well-item">
+		<div class="correct"><img  class="" src="images/3.jpg" /></div>
+		<div class="opposite">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						请我吃披萨
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="well-item">
+		<div class="correct"><img  class="" src="images/4.jpg" /></div>
+		<div class="opposite">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						请我吃牛排！
+					</div>
+				</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

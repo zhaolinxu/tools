@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>咪咕咖啡</title>
+    <style>
+* {padding:0;margin:0;}
+        html,body {background:#74cffb;font-size:16px;max-width:750px;margin:0 auto;position:relative;position:relative;}
+h2 {margin:10px auto 10px auto;color:#248bd0;font-size:1.25rem;text-align:center;}
+img {width:100%;display:block;}
+.overhidden {overflow:hidden;height:100%;}
+.arrow {height:20px;width:auto;margin:10px auto;}
+.dialog__body {overflow:auto;height:calc(100% - 40px - 24px - 80px);-webkit-overflow-scrolling:touch;}
+.close-dialog {width:80%;display:block;margin:0 auto;height:40px;line-height:40px;vertical-align:middle;border-radius:5px;text-align:center;background:#248bd0;color:#fff;}
+.close-dialog.margin {margin-top:40px;}
+.dialog__body div {font-weight:bold;margin-bottom:5px;color:#248bd0;font-size:1rem;}
+.dialog__body p {margin-bottom:15px;}
+.dialog__body p:last-child {color:#248BD0;}
+#btn {position:absolute;right:10px;top:0.625rem;color:#fff;border:1px solid #fff;height:30px;line-height:30px;padding:0px 10px;border-radius:5px;font-size:1.125rem;vertical-align:middle;}
+.main {/*display:none;*/background:rgba(0,0,0,0.8) !important;background:#000;filter:alpha(opacity=80);width:100%;height:100%;position:fixed;top:0;left:0;z-index:999;-webkit-transform:scale(0);}
+.main.open {-webkit-animation:pulse 0.3s ease both;-moz-animation:pulse 0.3s ease both;}
+.content {/*width:calc(90% - 30px);*//*height:80%;*/width:calc(100% - 30px);height:100%;background:#fff;position:absolute;margin:auto;padding:15px;top:0;left:0;right:0;z-index:9999;bottom:0;}
+@-webkit-keyframes pulse {0% {-webkit-transform:scale(0)}
+100% {-webkit-transform:scale(1)}
+}
+@keyframes pulse {0% {transform:scale(0)}
+100% {transform:scale(1)}
+}
+
+
+    </style>
+
+</head>
+
+<body>
+    <a id="btn">规则</a>
+    <div class="main">
+        <div class="content">
+            <h2>活动规则</h2>
+            <div class="dialog__body">
+                <div>1、活动时间：</div>
+                <p>2017.6.28-2017.7.28</p>
+                <div>2、如何获得分享券</div>
+                <p>用户完成灵犀声音明信片的制作，并分享至朋友圈或微信好友，即可获得咪咕咖啡分享券一张。（每个手机号码限领取一次，总量2000份，领完为止）</p>
+                <div>3、如何兑换分享券</div>
+                <p>关注微信公众号“咪咕咖啡”，绑定手机号，注册银卡会员，点击“我的—会员中心—我的礼券”，即可兑换分享券及查看具体使用规则。</p>
+                <div>4、如何使用分享券</div>
+                <p>进入“咪咕咖啡“公众号，点击“我的—咪咕卡”，出示给咖啡师扫码即可。</p>
+                <div>5、分享券使用场所</div>
+                <p>本分享券可在“2017上海GSMA展会”咪咕咖啡吧台以及咪咕咖啡全国各门店使用。</p>
+                <p>咪咕咖啡目前在北京、上海、杭州、南京、成都、厦门均设有门店，具体请在“咪咕咖啡”微信公众号内点击“门店索引”查看。</p>
+                <p>*本活动最终解释权归属咪咕公司</p>
+            </div>
+            <img class="arrow" src="images/icon_down_gray.png" />
+            <a class="action close-dialog" id="close">我知道了</a>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            $("#btn").click(function() {
+                $(".main").addClass("open");
+                $("html,body").addClass("overhidden");
+                $(".dialog__body").scrollTop(0);
+            });
+            $("#close").click(function() {
+                $(".main").removeClass("open");
+                $("html,body").removeClass("overhidden");
+            });
+            $('.dialog__body').on('scroll', function(e) {
+                var viewH = $(this).height(), //可见高度
+                    contentH = $(this).get(0).scrollHeight, //内容高度
+                    scrollTop = $(this).scrollTop(); //滚动高度
+                if (contentH - viewH - scrollTop <= 5) {
+                    $(".arrow").hide();
+                    $(".close-dialog").addClass("margin");
+                } else {
+                    $(".arrow").show();
+                    $(".close-dialog").removeClass("margin");
+                }
+            });
+            $(".arrow").click(function() {
+                $(".dialog__body").scrollTop($(".dialog__body")[0].scrollHeight);
+            });
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<style>
+			
+.shake {
+	width: 100px;
+	height:100px;
+	background: #000;
+    animation-delay: 0.5s;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+    animation-name: shake;
+    animation-timing-function: linear;
+}
+@keyframes shake {
+0% {
+    transform: rotate(0deg);
+}
+25% {
+    transform: rotate(20deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+75% {
+    transform: rotate(20deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+@keyframes shake {
+0% {
+    transform: rotate(0deg);
+}
+25% {
+    transform: rotate(20deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+75% {
+    transform: rotate(20deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+input{height: 50px; border: 1px solid #000; margin-top: 30px;width: 200px;display: block;}
+		</style>
+	</head>
+	<body>
+		<div class="shake"></div>
+		<input type="text" onkeypress="javascript:return false"  value="onkeypress"/>
+		<input type="text" onmousedown="return false" value="onmousedown"/>
+		<input type="text" readonly="readonly" value="readonly"/>
+		 
+	</body>
+</html>

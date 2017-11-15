@@ -1,0 +1,261 @@
+/*!
+* =====================================================
+* Name: custom.css
+* Author: Alvin
+* Version: 1.0.0 
+* Date: 2017-05-24 11:05
+* =====================================================
+*/
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-size: 16px;
+}
+body {
+	font-family: Helvetica;
+	/*解决滚动、滑动时候页面卡*/
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+	/*禁止横竖屏时内容自动调整大小*/
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	/*禁止选中文字*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	width: 100%;
+	height: 100%;
+	background: #0a0e17;
+}
+
+/*开启GPU硬件加速，css3动画*/
+
+.yuansu {
+	webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	/*开启GPU硬件加速之后，有些时候可能会导致浏览器频繁闪烁或抖动，可以尝试以下办法解决之：*/
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-appearance: none;
+	appearance: none;
+}
+a:active,
+a:focus,
+input:active {
+	outline: none;
+}
+button,
+input,
+textarea,
+input:active,
+input:focus,
+button,
+input:hover,
+input[type="button"] {
+	/*清除点击时的阴影*/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/*表单元素的默认外观重置*/
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	outline: none;
+}
+
+/*placeholder颜色*/
+
+::-webkit-input-placeholder {
+	/* WebKit browsers*/
+	color: #aaaaaa;
+}
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18*/
+	color: #aaaaaa;
+}
+::-moz-placeholder {
+	/* Mozilla Firefox 19+*/
+	color: #aaaaaa;
+}
+:-ms-input-placeholder {
+	/* Internet Explorer 10+*/
+	color: #aaaaaa;
+}
+input:focus::-webkit-input-placeholder {
+	color: #EEEEEE;
+}
+input[disabled] {
+	background: #aaa;
+	color: #fff;
+}
+
+/*android 上去掉语音输入按钮*/
+input::-webkit-input-speech-button {
+	display: none
+}
+img {
+	border: 0;
+	/*禁止长按保存或拷贝图像-webkit-touch-callout: none;*/
+}
+ol,
+li {
+	list-style: none;
+}
+.f-left {
+	float: left;
+}
+.f-right {
+	float: right;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.yuanjiao {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.dis-none {
+	display: none;
+}
+.v-center {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: #000;
+	width: 50%;
+	height: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+.tBor:before,
+.bBor:after {
+	position: absolute;
+	content: "";
+	height: 1px;
+	background: #45474b;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+.tBor:before {
+	top: 0;
+}
+.bBor:after {
+	bottom: 0;
+}
+.bg-img {
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	top: 0;
+}
+
+/*背景透明*/
+
+.touming {
+	background: rgba(0, 0, 0, 0.5) !important;
+	background: #000;
+	filter: alpha(opacity=50);
+}
+
+/*渐变边框*/
+
+.border-jianbian {
+	border: 1px solid #ccc;
+	border-image: -webkit-linear-gradient( #555, #ccc) 50 50;
+	border-image: -moz-linear-gradient( #555, #ccc) 50 50;
+	border-image: linear-gradient( #555, #ccc) 50 50;
+}
+
+/*main css start*/
+
+
+/*main css end*/
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+	html {
+		font-size: 11px
+	}
+}
+@media screen and (min-width: 376px) and (max-width: 414px) {
+	html {
+		font-size: 12px
+	}
+}
+@media screen and (min-width: 415px) and (max-width: 639px) {
+	html {
+		font-size: 15px
+	}
+}
+@media screen and (min-width: 640px) and (max-width: 719px) {
+	html {
+		font-size: 20px
+	}
+}
+@media screen and (min-width: 720px) and (max-width: 749px) {
+	html {
+		font-size: 22.5px
+	}
+}
+@media screen and (min-width: 750px) and (max-width: 799px) {
+	html {
+		font-size: 23.5px
+	}
+}
+@media screen and (min-width: 800px) {
+	html {
+		font-size: 25px
+	}
+}
+@media screen and (width: 320px) {}
+@media screen and (width: 360px) {}
+@media screen and (width: 375px) {}
+@media screen and (width: 384px) {}
+@media screen and (width: 400px) {}
+@media screen and (width: 414px) {}
+@media screen and (width: 480px) {}
+@media screen and (width: 540px) {}
+@media screen and (width: 640px) {}
+@media screen and (width: 720px) {}
+@media screen and (width: 750px) {}
+@media screen and (width: 800px) {}
+@media screen and (width: 414px) and (height:660px) {
+	/*三星*/
+}
+@media screen and (width: 320px) and (height:504px) {
+	/*5s在微信下*/
+}
+@media screen and (width: 360px) and (height:532px) {
+	/*华为 mate 7 / 9*/
+}
+
+/*竖屏时使用的样式*/
+
+@media all and (orientation:portrait) {
+	.css {}
+}
+
+/*横屏时使用的样式*/
+
+@media all and (orientation:landscape) {
+	.css {}
+}

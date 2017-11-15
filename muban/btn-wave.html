@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/custom.css?time=20150905.css" />
+		<style>
+			ul {
+				font-size: 0;
+				position: relative;
+				padding: 0;
+				width: 480px;
+				margin: 40px auto;
+				user-select: none;
+			}
+			
+			li {
+				display: inline-block;
+				width: 160px;
+				height: 60px;
+				background: #E95546;
+				font-size: 16px;
+				text-align: center;
+				line-height: 60px;
+				color: #fff;
+				text-transform: uppercase;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			
+			.slider {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 4px;
+				background: #4FC2E5;
+				transition: all 0.5s;
+			}
+			
+			.ripple {
+				width: 0;
+				height: 0;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.4);
+				-webkit-transform: scale(0);
+				-ms-transform: scale(0);
+				transform: scale(0);
+				position: absolute;
+				opacity: 1;
+			}
+			
+			.rippleEffect {
+				-webkit-animation: rippleDrop .7s linear;
+				animation: rippleDrop .7s linear;
+			}
+			
+			@-webkit-keyframes rippleDrop {
+				100% {
+					-webkit-transform: scale(2);
+					transform: scale(2);
+					opacity: 0;
+				}
+			}
+			
+			@keyframes rippleDrop {
+				100% {
+					-webkit-transform: scale(2);
+					transform: scale(2);
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>Tab One</li>
+			<li>Tab Two</li>
+			<li>Tab Three</li>
+			<li class="slider"></li>
+		</ul>
+
+		<script type="text/javascript" src="js/jquery-1.11.0.js?time=New Date()"></script>
+		<script>
+			$("ul li").click(function(e) {
+
+//				if($(this).hasClass('slider')) {
+//					return;
+//				}
+//
+//				var whatTab = $(this).index();
+//
+//				var howFar = 160 * whatTab;
+//
+//				$(".slider").css({
+//					left: howFar + "px"
+//				});
+
+				$(".ripple").remove();
+
+				var posX = $(this).offset().left,
+					posY = $(this).offset().top,
+					buttonWidth = $(this).width(),
+					buttonHeight = $(this).height();
+				$(this).append("<span class='ripple'></span>");
+
+				if(buttonWidth >= buttonHeight) {
+					buttonHeight = buttonWidth;
+				} else {
+					buttonWidth = buttonHeight;
+				}
+
+				var x = e.pageX - posX - buttonWidth / 2;
+				var y = e.pageY - posY - buttonHeight / 2;
+
+				$(".ripple").css({
+					width: buttonWidth,
+					height: buttonHeight,
+					top: y + 'px',
+					left: x + 'px'
+				}).addClass("rippleEffect");
+
+			});
+		</script>
+	</body>
+
+</html>

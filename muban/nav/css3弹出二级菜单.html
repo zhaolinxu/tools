@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+		<title>nav</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0
+			}
+			li,
+			ol,
+			ul {
+				list-style-type: none
+			}
+			nav,
+			nav *,
+			nav :after,
+			nav :before {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box
+			}
+			a,
+			a:active,
+			a:hover {
+				outline: 0;
+				text-decoration: none
+			}
+			a {
+				color: #fff;
+				display: block;
+				cursor: pointer
+			}
+			.collapse-navbar {
+				position: relative;
+				display: inline-block;
+				background-color: #ccc;
+				cursor: default;
+				margin: 20px;
+				border: 1px solid #ccc;
+				border-radius: 5px
+			}
+			.collapse-navbar .menu_btn {
+				width: 100px;
+				height: 60px;
+				line-height: 60px;
+				font-size: 25px;
+				text-align: center;
+				background-color: #ccc;
+				color: #fff
+			}
+			.collapse-navbar .navbar-menu {
+				z-index: 1000;
+				position: absolute;
+				width: 200px
+			}
+			.collapse-navbar .navbar-menu li {
+				background-color: red;
+				overflow: hidden;
+				opacity: 0;
+				height: 0;
+				border: 1px solid #fff;
+				border-radius: 5px;
+				transform-origin: center top 0;
+				webkit-transform-origin: center top 0;
+				-ms-transform-origin: center top 0;
+				tranform: perspective(100px) rotateX(-90deg);
+				-webkit-transform: perspective(100px) rotateX(-90deg);
+				-ms-transform: perspective(100px) rotateX(-90deg)
+			}
+			.collapse-navbar .navbar-menu li a {
+				color: #fff;
+				height: 50px;
+				line-height: 50px;
+				padding-left: 20px;
+				transition: all .4s ease;
+				-webkit-transition: all .4s ease
+			}
+			.collapse-navbar .navbar-menu li a:hover {
+				background-color: #fff;
+				color: #c8161e;
+				padding-left: 30px
+			}
+			.collapse-navbar:hover .navbar-menu li {
+				height: 50px;
+				opacity: 1;
+				transform: perspective(100px) rotateX(0);
+				-webkit-transform: perspective(100px) rotateX(0);
+				-ms-transform: perspective(100px) rotateX(0)
+			}
+			.collapse-navbar:hover .navbar-menu li.item0,
+			.collapse-navbar:hover .navbar-menu li.item4 {
+				transition: all .4s ease;
+				-webkit-transition: all .4s ease
+			}
+			.collapse-navbar:hover .navbar-menu li.item1,
+			.collapse-navbar:hover .navbar-menu li.item3 {
+				transition: all .4s ease .1s;
+				-webkit-transition: all .4s ease .1s
+			}
+			.collapse-navbar:hover .navbar-menu li .item2 {
+				-webkit-transition: all .4s ease .2s;
+				transition: all .4s ease .2s
+			}
+			.shrink-navbar {
+				margin-top: 30px;
+				margin-left: 20px;
+				background: #ccc;
+				display: inline-block
+			}
+			.shrink-navbar .navbar-menu li {
+				position: relative;
+				float: left;
+				width: 100px;
+				text-align: center;
+				line-height: 40px;
+				border-right: 1px solid #fff
+			}
+			.shrink-navbar .navbar-menu li:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				height: 2px;
+				width: 0;
+				background: #c8161e
+			}
+			.shrink-navbar .navbar-menu li a,
+			.shrink-navbar .navbar-menu li:after {
+				-webkit-transition: all .3s;
+				transition: all .3s
+			}
+			.shrink-navbar .navbar-menu li:hover:after {
+				width: 100%
+			}
+			.shrink-navbar .navbar-menu li:hover a {
+				color: #c8161e
+			}
+			.shrink-navbar .navbar-menu li.active:after {
+				width: 100%;
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+			.shrink-navbar .navbar-menu li.active a {
+				color: #c8161e
+			}
+			.shrink-navbar.shrink-center .navbar-menu li:after {
+				width: 100%;
+				-webkit-transform: scale(0);
+				transform: scale(0)
+			}
+			.shrink-navbar.shrink-center .navbar-menu li:hover:after {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+			.dropdown {
+				position: relative
+			}
+			.dropdown .dropdown-menu {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				opacity: 0;
+				height: 0;
+				min-width: 100%;
+				border: 1px solid #d9d99d;
+				box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+				-webkit-transform: translate(0, 30px);
+				transform: translate(0, 30px);
+				-webkit-transition: all .3s;
+				transition: all .3s
+			}
+			.dropdown .dropdown-menu li {
+				cursor: pointer
+			}
+			.dropdown .dropdown-menu li:hover {
+				background: #eee
+			}
+			.dropdown:hover .dropdown-menu {
+				opacity: 1;
+				height: auto;
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0)
+			}
+			.dropdown.dropdown-arrow .dropdown-menu:before {
+				content: "";
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				border: 10px solid transparent;
+				border-bottom-color: #d9d9d9;
+				-webkit-transform: translate(-50%, 0);
+				transform: translate(-50%, 0)
+			}
+			.dropdown.dropdown-arrow .dropdown-menu:after {
+				content: "";
+				position: absolute;
+				top: -18px;
+				left: 50%;
+				border-bottom-color: #fff;
+				-webkit-transform: translate(-50%, 0);
+				transform: translate(-50%, 0)
+			}
+		</style>
+	</head>
+
+	<body class="nav3d" ontouchstart="">
+		<nav class="collapse-navbar">
+			<a class="menu_btn icon-menu">主菜单</a>
+			<ul class="item navbar-menu">
+				<li class="item4">
+					<a>子菜单</a>
+				</li>
+				<li class="item3">
+					<a>子菜单</a>
+				</li>
+				<li class="item2">
+					<a>子菜单</a>
+				</li>
+				<li class="item1">
+					<a>子菜单</a>
+				</li>
+				<li class="item0">
+					<a>子菜单</a>
+				</li>
+			</ul>
+		</nav>
+		<br>
+		<nav class="shrink-navbar">
+			<ul class="item navbar-menu">
+				<li>
+					<a>子菜单</a>
+				</li>
+				<li>
+					<a>子菜单</a>
+				</li>
+				<li>
+					<a>子菜单</a>
+				</li>
+			</ul>
+		</nav>
+		<br>
+		<nav class="shrink-navbar shrink-center">
+			<ul class="item navbar-menu">
+				<li class="dropdown">
+					<a>子菜单</a>
+					<ul class="dropdown-menu">
+						<li>子子菜单</li>
+					</ul>
+				</li>
+				<li class="dropdown dropdown-arrow">
+					<a>子菜单</a>
+					<ul class="dropdown-menu">
+						<li>子子菜单</li>
+						<li>子子菜单</li>
+						<li>子子菜单</li>
+					</ul>
+				</li>
+				<li>
+					<a>子菜单</a>
+				</li>
+			</ul>
+		</nav>
+	</body>
+
+</html>

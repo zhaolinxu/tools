@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>弹幕</title>
+		<style type="text/css">
+			html,
+			body {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+				font-family: "微软雅黑";
+				font-size: 62.5%;
+				background: #ccc;
+			}
+			.boxDom {
+				width: 100%;
+				/*height: 100%;*/
+				position: relative;
+				overflow: hidden;
+			}
+			.idDom {
+				width: 100%;
+				height: 60px;
+				background: #666;
+				position: fixed;
+				bottom: 0px;
+			}
+			.content {
+				display: inline-block;
+				width: 100%;
+				text-align: center;
+				height: 40px;
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				top: 0px;
+				bottom: 0px;
+				margin: auto;
+			}
+			.title {
+				display: inline;
+				font-size: 4em;
+				vertical-align: bottom;
+				color: #fff;
+			}
+			.text {
+				border: none;
+				width: 40%;
+				height: 30px;
+				border-radius: 5px;
+				font-size: 2.4em;
+				outline: none;
+				padding: 5px;
+			}
+			.btn {
+				width: 60px;
+				height: 30px;
+				background: #f90000;
+				border: none;
+				color: #fff;
+				font-size: 2.4em;
+			}
+			.string {
+				width: 300px;
+				height: 40px;
+				position: absolute;
+				overflow: hidden;
+				color: #000;
+				font-size: 4em;
+				line-height: 1.5em;
+				cursor: pointer;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="boxDom" id="boxDom">
+			<video width="100%" id="myvideo" src="http://coffee.migu.cn/res/media/2017beijing/2017030101.mp4" autoplay="autoplay"></video>
+			<div class="idDom" id="idDom">
+				<div class="content">
+					<p class="title">吐槽:</p>
+					<input type="text" class="text" id="text" />
+					<button type="button" class="btn" id="btn">发射</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script language="javascript" src="jquery-2.1.0.js"></script>
+	<script language="javascript">
+		$(function() {
+			var pageW = parseInt($("#boxDom").width());
+			var pageH = parseInt($("#boxDom").height());
+			var boxDom = $("#boxDom");
+			var btnDom = $("#btn");
+			var Top, Right;
+			var width;
+			width = pageW;
+			var colorArr = ["#ff0000", "#ff00ff", "#0000ff", "#33ff00", "#ffcc00", "#000000", "#fff"];
+			btnDom.bind("click", auto);
+			document.onkeydown = function(e) {
+				if(e.keyCode == 13) {
+					auto();
+				}
+			}
+
+			function auto() {
+				var creSpan = $("<span class='string'></span>");
+				var text = $("#text").val();
+				creSpan.text(text);
+				$("#text").val("");
+				Top = parseInt(pageH * (Math.random()));
+				var num = parseInt(colorArr.length * (Math.random()));
+				if(Top > pageH) {
+					Top = pageH - 20;
+				}
+				creSpan.css({ "top": Top, "right": -300, "color": getRandomColor() });
+				boxDom.append(creSpan);
+				var spanDom = $("#boxDom>span:last-child");
+				spanDom.stop().animate({ "right": pageW + 300 }, 10000, "linear", function() {
+					$(this).remove();
+				});
+			}
+
+			function getRandomColor() {
+				return '#' + (function(h) {
+					return new Array(7 - h.length).join("0") + h
+				})((Math.random() * 0x1000000 << 0).toString(16));
+			}
+		});
+	</script>
+
+</html>

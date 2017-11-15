@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js?time=New Date()"></script>
+		<link rel="stylesheet" href="css/custom.css?time=20150905.css" />
+
+	</head>
+
+	<body>
+		<div class="container">
+			<img haoroomslazyload="images/lazyload/1.jpg" src="" class="lazyload-img" />
+			<img haoroomslazyload="images/lazyload/2.jpg" src="" class="lazyload-img" />
+			<img haoroomslazyload="images/lazyload/3.jpg" src="" class="lazyload-img" />
+			<img haoroomslazyload="images/lazyload/4.jpg" src="" class="lazyload-img" />
+		</div>
+
+		<!--图片延迟加载方法-->
+		<script>
+			$(document).ready(function() {
+				var l = 0
+					//js方法翻译版
+				var lazyloadsrc = $('img').eq(0).attr("haoroomslazyload");
+				$("img").eq(0).attr("src", lazyloadsrc);
+				$(window).bind("scroll", function(event) {
+					for (var i = l; i < $("img").length; i++) {
+						if ($("img").eq(i).offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+							if ($("img").eq(i).attr("src") == "") {
+								var lazyloadsrc = $('img').eq(i).attr("haoroomslazyload");
+								$("img").eq(i).attr("src", lazyloadsrc);
+							}
+						}
+						if ($("img").eq(i).offset().top > parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+							l = i;
+							break;
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

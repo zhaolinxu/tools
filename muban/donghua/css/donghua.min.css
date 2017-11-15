@@ -1,0 +1,1 @@
+.car{width:100px;height:100px;background:#000;animation:myfirst 2s forwards}@keyframes myfirst{from{background:red}to{background:#ff0}}@-moz-keyframes myfirst{from{background:red}to{background:#ff0}}@-webkit-keyframes myfirst{from{background:red}to{background:#ff0}}@-o-keyframes myfirst{from{background:red}to{background:#ff0}}

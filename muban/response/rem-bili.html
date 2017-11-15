@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>Document</title>
+		<script src="jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			document.documentElement.style.fontSize = $(document.documentElement).width() / 7.5 + 'px';
+			$(window).on('resize', function() {
+				document.documentElement.style.fontSize = $(document.documentElement).width() / 7.5 + 'px';
+			})
+		</script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				line-height: 1.5;
+			}
+			body {
+				background: #ccc;
+			}
+			header {
+				height: 0.88rem;
+				background: #fff;
+				text-align: center;
+				color: #333;
+			}
+			h1 {
+				font-size: 0.36rem;
+				height: 0.88rem;
+				line-height: 0.88rem;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>汇率</h1>
+		</header>
+	</body>
+
+</html>

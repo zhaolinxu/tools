@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{margin: 0;padding: 0;}
+		div{width: 200px; height: 200px;background: #00B481; border:;}
+			svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+svg line {
+    stroke-width: 10;
+    stroke: #000;
+    fill: none;
+    stroke-dasharray: 200;
+    -webkit-transition: -webkit-transform .6s ease-out;
+    transition: transform .6s ease-out;
+}
+
+div:hover svg line {
+    -webkit-transform: translateX(-400px);
+    transform: translateX(-400px);
+		</style>
+	</head>
+
+	<body>
+
+		<div>
+			<svg width="200" height="200">
+				<line x1="0" y1="0" x2="600" y2="0" />
+			</svg>
+		</div>
+
+	</body>
+
+</html>

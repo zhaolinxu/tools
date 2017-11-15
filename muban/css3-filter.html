@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="滤镜,css3,filter,smohan,水墨寒">
+    <meta name="description" content="CSS3 Filter是W3C CSS filter Effect 1.0中定义的滤镜，一个使用CSS来改变图片和HTML的模糊度、亮度、对比度、饱和度等等效果的过滤器。">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="http://data.smohan.net/static/css/demo.css">
+    <title>CSS3 - filter - 水墨寒的博客</title>
+    <style>
+        .container{ width: 80%; margin: 0 auto; position: relative;max-width: 960px;}
+        .container .m-item{
+            margin-top: 20px;
+            text-align: center;
+            border-bottom: 1px solid #dedede;
+            padding-bottom: 20px;;
+        }
+        .container .m-item h6{
+            font-size: 1.5em;
+        }
+        .m-item .m-view{font-size: 0; margin: 10px 0;}
+        .m-item .m-view .m-col{
+            display: inline-block;
+            width: 30%;
+            font-size: 14px;
+            vertical-align: top;
+            margin:0 1.5%;
+        }
+        .m-col img{
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            -webkit-transition: all .5s linear;
+            transition: all .5s linear;
+            margin: 0 auto;
+        }
+        .m-col p{
+            margin-top: 10px;;
+        }
+        .filter-grayscale,.hover-grayscale:hover{
+            -webkit-filter : grayscale(1);
+            filter : grayscale(1);
+        }
+        .filter-blur,.hover-blur:hover{
+            -webkit-filter : blur(3px);
+            filter : blur(3px);
+        }
+        .filter-invert,.hover-invert:hover{
+            -webkit-filter : invert(1);
+            filter : invert(1);
+        }
+        .filter-opacity,.hover-opacity:hover{
+            -webkit-filter : opacity(.3);
+            filter : opacity(.3);
+        }
+        .filter-saturate,.hover-saturate:hover{
+            -webkit-filter : saturate(.3);
+            filter : saturate(.3);
+        }
+        .filter-brightness,.hover-brightness:hover{
+            -webkit-filter : brightness(.3);
+            filter : brightness(.3);
+        }
+        .filter-contrast,.hover-contrast:hover{
+            -webkit-filter : contrast(3);
+            filter : contrast(3);
+        }
+        .filter-drop-shadow,.hover-drop-shadow:hover{
+            -webkit-filter : drop-shadow(5px 3px 7px #888);
+            filter : drop-shadow(5px 3px 7px #888);
+        }
+        .filter-sepia,.hover-sepia:hover{
+            -webkit-filter : sepia(1);
+            filter : sepia(1);
+        }
+        .filter-hue-rotate,.hover-hue-rotate:hover{
+            -webkit-filter : hue-rotate(135deg);
+            filter : hue-rotate(135deg);
+        }
+        @media screen and (max-width: 640px){
+            .m-item .m-view .m-col{
+                width: 100%;
+                margin: .5rem auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="m-item">
+        <h6>grayscale</h6>
+        <p>效果：类似于PS中的去色或者黑白</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-grayscale"/>
+                <p>效果图grayscale(1)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-grayscale"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>blur</h6>
+        <p>效果：类似于PS中的高斯模糊</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-blur"/>
+                <p>效果图blur(3px)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-blur"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>invert</h6>
+        <p>效果：类似于PS中的反相</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-invert"/>
+                <p>效果图invert(1)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-invert"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>opacity</h6>
+        <p>效果：透明度，类似于PS中的图层不透明度</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-opacity"/>
+                <p>效果图opacity(.3)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-opacity"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>saturate</h6>
+        <p>效果：类似于PS中的饱和度</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-saturate"/>
+                <p>效果图saturate(.3)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-saturate"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>brightness</h6>
+        <p>效果：类似于PS中的亮度</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-brightness"/>
+                <p>效果图brightness(.3)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-brightness"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>contrast</h6>
+        <p>效果：类似于PS中的对比度</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-contrast"/>
+                <p>效果图contrast(3)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-contrast"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-item">
+        <h6>drop-shadow</h6>
+        <p>效果：类似于PS中的投影</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-drop-shadow"/>
+                <p>效果图drop-shadow(5px 3px 7px #888)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-drop-shadow"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>sepia</h6>
+        <p>效果：类似于相机中的老照片滤镜</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-sepia"/>
+                <p>效果图hue-rotate(135deg)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-sepia"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-item">
+        <h6>hue-rotate</h6>
+        <p>效果：类似于PS中的色相+旋转（不知道怎么说）</p>
+        <div class="m-view">
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" />
+                <p>原图</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="filter-hue-rotate"/>
+                <p>效果图hue-rotate(135deg)</p>
+            </div>
+            <div class="m-col">
+                <img src="http://data.smohan.net/upload/cover/1422731880.jpg" class="hover-hue-rotate"/>
+                <p>鼠标滑过:hover</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

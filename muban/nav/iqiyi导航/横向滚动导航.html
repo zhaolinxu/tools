@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0 ,user-scalable=no">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+<style>
+    #overflow {
+        border: 1px solid #000;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    #overflow .container div {
+        float: left;
+        width: 60px;
+        float: left;
+    }
+	@media only screen and (max-width : 1024px) {
+		#overflow {width: 480; 
+		height: 60px;}        
+		#overflow .container div{
+			height: 45px;
+		}
+	}        
+	@media only screen and (max-width : 768px) {
+		#overflow {width: 480; 
+		height: 60px;}        
+		#overflow .container div{
+			height: 45px;
+		}
+	}        
+	@media only screen and (max-width : 480px) {
+		#overflow {width: 480; 
+		height: 35px;}        
+		#overflow .container div{
+			height: 20px;
+		}
+	}
+	@media only screen and (max-width : 320px) {
+		#overflow {width: 320; 
+		height: 35px;}        
+		#overflow .container div{
+			height: 20px;
+		}
+	}
+</style>
+</head>    
+<body>
+<div data-role="page" id="currentorders">
+   <header data-role="header" data-position="fixed">
+        <nav data-role="navbar">
+            <div id="overflow">
+                <div class="container">
+                    <div><a href="" class="yellow">item 1</a>
+                    </div>
+                    <div><a href="" class="orange">item 2</a>
+                    </div>
+                    <div><a href="" class="red">item 3</a>
+                    </div>
+                    <div><a href="" class="yellow">item 4</a>
+                    </div>
+                    <div><a href="" class="orange">item 5</a>
+                    </div>
+                    <div><a href="" class="red">item 6</a>
+                    </div>
+                    <div><a href="" class="red">item 7</a>
+                    </div>
+                    <div><a href="" class="red">item 8</a>
+                    </div>
+                    <div><a href="" class="red">item 9</a>
+                    </div>
+                    <div><a href="" class="red">item 10</a>
+                    </div>
+					 <div><a href="" class="red">item 11</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div data-role="header">
+            <h3>这是一个水平导航栏,并且支持水平滚动</h3>
+        </div>
+    </header>
+    <div data-role="content">            
+		这是网页的主体
+    </div>
+    
+</div>        
+</body>
+<script>
+ $('#currentorders').live("pageshow", function () {
+  var width = 0;
+  $('#overflow .container div').each(function () {
+    width += $(this).outerWidth(true);
+  });
+  $('#overflow .container').css('width', width + "px");
+})
+/*
+$("#overflow .container div a").live('touchstart', function () {
+ var width = 0;
+ $('#overflow .container div').each(function () {
+    width += $(this).outerWidth(true);
+ });
+ $('#overflow .container').css('width', width + "px");
+})
+*/
+</script>    
+</html>

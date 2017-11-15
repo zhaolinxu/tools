@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+			<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/custom.css?time=20150905.css" />
+		<!--ie hack-->
+		<!--[if IE 7]> Internet Explorer 7 <![endif]-->
+		<!--[if IE 8]> Internet Explorer 8 <![endif]-->
+		<!--[if IE 9]> Internet Explorer 9 <![endif]-->
+	</head>
+
+	<body>
+		<div class="container">
+
+		</div>
+
+		<script type="text/javascript" src="js/jquery-1.11.0.js?time=New Date()"></script>
+		<script>
+			$(function() {
+				reHeight();
+
+				$(window).resize(function() {
+					reHeight();
+				})
+
+				function reHeight() {
+					var bodyHeight = $(window).height() - 100;
+					var zuoyeHeight = $(window).height() - 300;
+					$(".homework-content-top").css("height", bodyHeight);
+					$(".homework-text").css("height", zuoyeHeight);
+				}
+			})
+		</script>
+	</body>
+
+</html>

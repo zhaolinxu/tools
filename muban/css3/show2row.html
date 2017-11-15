@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>默认显示2行展开收起</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-size: 16px;
+			}
+			.text {
+				margin: 10px;
+				height: auto;
+				line-height: 130%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+			}
+			.text.close {
+				-webkit-line-clamp: 3;
+			}
+			.text.opening {
+				-webkit-line-clamp: inherit;
+			}
+			.updown {
+				display: block;
+				color: #000;
+				text-decoration: none;
+				text-align: center;
+				opacity: 0;
+				height: 30px;
+			}
+			.updown.show{opacity: 1;}
+			.updown div{display: inline-block;}
+			.updown span {
+				font-size: 1.875rem;
+				transform: rotate(-90deg);
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 5px;
+				line-height: 110%;
+				font-weight: lighter;
+			}
+			.updown.active span{transform: rotate(90deg);}
+		</style>
+	</head>
+
+	<body>
+		<div class="text">出世则心怀众生，入世则灵台清明。人间有悲欢有离合，只有放下，方能静守澄明之心。林清玄以从容单纯的文字，以高远的思想，在时间的暗流里为我们抚平流年的伤痕。（文轩网评论）历史渐去渐远，有一种感动叫回忆；当下滚滚而来，有一种心情叫。</div>
+		<a href="#" class="updown"><div>展开</div><span>&lsaquo;</span></a>
+
+		<script src="../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//判断行数
+			var divHeight = $(".text").height();
+			var lineHeight = $(".text").css("line-height");
+			//过滤掉px
+			lineHeight = /\d+/g.exec(lineHeight);
+			var lineCount = divHeight / lineHeight;
+			if(lineCount > 2) {
+				$(".updown").addClass("show");
+				$(".text").addClass("close");
+			}
+			//点查看店铺信息，展开、收起
+			$(".updown.show").click(function() {
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+					$(".text").removeClass("opening");
+					$(this).children("div").html("展开");
+				} else {
+					$(this).addClass("active");
+					$(".text").addClass("opening");
+					$(this).children("div").html("收起");
+				}
+			});
+		</script>
+	</body>
+
+</html>

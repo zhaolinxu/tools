@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>不用fixed，解决h5两端布局的input+fixed的bug</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html,
+    body {
+      max-width: 640px;
+      height: 100%;
+      margin: 0 auto;
+    }
+    .main {
+      height: 100%;
+      padding: 30px;;
+      background-color: #ebebeb;
+      box-sizing: border-box;
+    }
+    .foot {
+      height: 50px;
+      margin-top: -50px;
+      line-height: 50px;
+      text-align: center;
+      color: white;
+      background-color: orange;
+    }
+
+  </style>
+</head>
+<body>
+<div class="main">
+  <p>可以用手机看看</p>
+  <p>test</p>
+  <p>软键盘出来后</p>
+  <p>test</p>
+  <p>foot是否会错位~</p>
+  <p>test</p>
+  <p>test</p>
+  <input type="text" placeholder="我是一个输入框">
+  <input type="text" placeholder="用手机点我啊">
+</div>
+<div class="foot">
+  copyright by linyang
+</div>
+
+</body>
+</html>

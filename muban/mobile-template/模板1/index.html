@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>基础结构</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var fz = 32 * (clientWidth / 750);
+                    fz = (fz > 32 ? 32 : fz);
+                    docEl.style.fontSize = fz + 'px';
+                    win._fz = fz;
+                };
+            if (!doc.addEventListener) return;
+            recalc();
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+            window.recalc = recalc;
+        })(document, window);
+    </script>
+</head>
+<body>
+<div id="loading" class="loading">
+    <p class="con">正在拼命加载中...</p>
+</div>
+<div id="page" class="page">
+
+</div>
+<script src="js/jquery-2.1.0.min.js"></script>
+<!--<script src="js/common.js"></script>
+<script src="js/page.js"></script>-->
+</body>
+</html>

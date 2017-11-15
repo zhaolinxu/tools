@@ -1,0 +1,73 @@
+	<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/custom.css?time=20150905.css" />
+		<style>
+			body {
+				background: #00B481;
+			}
+			div{margin: 20px auto;}
+			/*三条杠*/
+			
+			.sdg {
+				width: 45px;
+				height: 45px;
+				line-height: 2.6;
+				border: 1px solid #fff;
+			}
+			
+			.sdg::before {
+				content: "";
+				width: 20px;
+				height: 2px;
+				background: #fff;
+				display: inline-block;
+				box-shadow: 0 7px 0 #fff, 0 -7px 0 #fff;
+				margin: 10px 10px;
+			}
+			/*气泡*/
+			.callout {
+				position: relative;
+				width: 300px;
+				height: 120px;
+				background-color: #ccc;
+				border: 1px solid red;
+			}
+			
+			.callout::before {
+				content: "";
+				position: absolute;
+				top: -.4em;
+				left: 1em;
+				padding: .35em;
+				background: inherit;
+				border: inherit;
+				border-right: 0;
+				border-bottom: 0;
+				transform: rotate(45deg);
+			} //先写一个正方形，然后旋转45度变为三角形
+		</style>
+	</head>
+
+	<body class="layout-scroll-fixed">
+		<!--三条杠-->
+		<div class="sdg"></div>
+		<!--气泡-->
+		<div class="callout"></div>
+		
+		<a href="mailto://likexiazai@qq.com">邮件</a>
+		<a href="tel:15019205604">电话</a>
+	</body>
+
+</html>

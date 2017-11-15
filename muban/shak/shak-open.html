@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>摇一摇</title>
+<link href="http://static.ydmap.com.cn//themes/mobile/blue/css/style.css" rel="stylesheet"type="text/css"></link>
+ <!-- 置顶附件 -->
+<script type="text/javascript" src="http://static.ydmap.com.cn//js/jquery/1.11.1/jquery.min.js">  </script>    
+<script type="text/javascript" src="http://static.ydmap.com.cn//js/portal/mobile/shake/howler.min.js"></script> 
+<script type="text/javascript" src="http://static.ydmap.com.cn//js/portal/mobile/shake/fastclick.js"></script> 
+  <script type="text/javascript" src="http://static.ydmap.com.cn//js/portal/mobile/shake/shake.js"></script>
+<script type="text/javascript" src="http://static.ydmap.com.cn//js/portal/mobile/lottery/config.js"></script><!--置顶--> 
+<style>
+#container{width:100%;}
+body{overflow: hidden;margin: 0;}
+#res_bug img{ height: 75px !important;height: 75px;}
+#res_bug{margin-bottom: 0px;}
+.y_txt span{font-size: 33px;}
+.a{position: relative; top: auto; left: auto; right: auto;  }
+.b{z-index: 999; position: relative; top: auto;}
+.c{ position: relative; top: auto; left: auto; right: auto; margin-top: -75px;}
+.img-up{margin-top: 10%;}
+.img-up,.img-down{ height: 75px; overflow: hidden; border-bottom: 2px solid #444444;  width: 100%; z-index: 9999; top: auto; text-align: center;position: relative;}
+.img-down{  border-bottom:none;border-top: 2px solid #444444;}
+.logo-bg{ background: #fff;width:80%;  z-index: 999; margin: auto; text-align: center;position: relative; height: 161px; }
+</style>
+</head>
+<body >
+   <div class="index y_m1">
+      <table id="container" cellpadding="0" cellspacing="0">
+       <tbody>
+       <!--  <tr id="controlbar">
+		   <td class="controlbar" onclick="javascript:shake();">
+			<img src="./images/sdy.png" width="40" height="53"/>
+		   </td>
+	     </tr>-->
+          <tr>
+            <td class="container" colspan="2">
+              <div id="shake">
+                <div class="se"id="se"></div>
+                <div class="img-up"><img src="http://static.ydmap.com.cn//themes/mobile/blue/images/hand.png"  class="shake_up a" id="shakeup"/></div>
+                <div class="logo-bg"><img src="http://static.ydmap.com.cn//themes/mobile/blue/images/inner.png" class="inner b"/></div>
+                <div class="img-down"><img src="http://static.ydmap.com.cn//themes/mobile/blue/images/hand.png" class="shake_down c" id="shakedown"/></div>
+               </div>
+              <p class="load_m"id="loading"></p>
+              </td>
+             </tr>
+        </tbody>
+      </table>
+     <div class="clear"></div>
+     <div class="yao_bottom">
+      <div class="y_txt">
+         <p id="res_bug"><!--<img src="images/img-good.png" />--></p>
+         <h1 id="lottery" >您还有<span id="innum" class="yao_c"></span>次抽奖机会</h1>
+         <div style="width:130px;margin:0 auto">
+         <li class="yao_g"><a href="/page.shtml?id=100765"><s class="yao_icon">活动规则</s></a></li>
+         <p><a class="yao_btn">查看获奖名单</a></p>
+         </div>
+      </div>
+     </div>
+  </div>
+   <script type="text/javascript">
+  var dataid;
+  var pagaId;
+  $(document).ready(function(){
+      var url=window.location.href.split("=");
+         pagaId=url[1].split("&");
+         dataid=url[2].split("&");
+         result(dataid[0]);
+         $(".yao_btn").attr('href',"/page.shtml?id=100766&dataid="+dataid[0]+"&datatype=94");
+  });
+</script><!--抽奖次数--->
+</body>
+</html>

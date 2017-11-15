@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>比特币价值换算器</title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<style>
+			input[type="text"] {
+				width: 400px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<table width="700">
+
+			<tr>
+				<td>1比特币市场价格(RMB)：</td>
+				<td>
+					<input id="price" type="text" placeholder="当前市场价" autocomplete="off" value="2032.23" />
+				</td>
+			</tr>
+			<tr>
+				<td>比特币（BTC）：</td>
+				<td>
+					<input id="btc" type="text" placeholder="比率：1" autocomplete="off" />
+				</td>
+			</tr>
+			<tr>
+				<td>比特分（cBTC）：</td>
+				<td>
+					<input id="cbtc" type="text" placeholder="比率：0.01" autocomplete="off" />
+				</td>
+			</tr>
+			<tr>
+				<td>毫比特（mBTC）：</td>
+				<td>
+					<input id="mbtc" type="text" placeholder="比率：0.001" autocomplete="off" />
+				</td>
+			</tr>
+			<tr>
+				<td>微比特（μBTC或uBTC）：</td>
+				<td>
+					<input id="ubtc" type="text" placeholder="比率：0.000001" autocomplete="off" />
+				</td>
+			</tr>
+			<tr>
+				<td>聪（satoshi）：</td>
+				<td>
+					<input id="satoshi" type="text" placeholder="比率：0.00000001" autocomplete="off" />
+				</td>
+			</tr>
+			<tr>
+				<td>价值(RMB：</td>
+				<td>
+					<input id="myPrice" type="text" placeholder="" autocomplete="off" />
+				</td>
+			</tr>
+			<tr>
+				<td>清空</td>
+				<td>
+					<input id="clear" type="button" value="清空结果" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<br />
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<br />
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<br />
+				</th>
+			</tr>
+			<tr>
+				<tr>
+					<th>谷壳币</th>
+				</tr>
+				<tr>
+					<td>谷壳币单价：</td>
+					<td>
+						<input id="gprice" type="text" placeholder="" autocomplete="off" value="0.0350" />
+					</td>
+				</tr>
+				<tr>
+					<td>数量：</td>
+					<td>
+						<input id="gcount" type="text" placeholder="交易数量" autocomplete="off" />
+					</td>
+				</tr>
+				<tr>
+					<td>总价：</td>
+					<td>
+						<input id="gzong" type="text" placeholder="市场价总价" autocomplete="off" />
+					</td>
+				</tr>
+				<tr>
+					<td>买价：</td>
+					<td>
+						<input id="gbuy" type="text" placeholder="买入价格" autocomplete="off" />
+					</td>
+				</tr>
+				<tr>
+					<td>卖价：</td>
+					<td>
+						<input id="gsale" type="text" placeholder="卖出价格" autocomplete="off" />
+					</td>
+				</tr>
+				<tr>
+					<td>买总价：</td>
+					<td>
+						<input id="gbuyzong" type="text" placeholder="买入总价" autocomplete="off" />
+					</td>
+				</tr>
+				<tr>
+					<td>卖总价：</td>
+					<td>
+						<input id="gsalezong" type="text" placeholder="卖出总价" autocomplete="off" />
+					</td>
+				</tr>
+				<tr>
+					<td>利润（税后）：</td>
+					<td>
+						<input id="gzhuan" type="text" placeholder="倒卖利润" autocomplete="off" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>清空</td>
+					<td>
+						<input id="gclear" type="button" value="清空结果" />
+					</td>
+				</tr>
+		</table>
+
+		<script>
+			$(function() {
+				var prc = $("#price");
+				var btc = $("#btc");
+				var cbtc = $("#cbtc");
+				var mbtc = $("#mbtc");
+				var ubtc = $("#ubtc");
+				var satoshi = $("#satoshi");
+				var myPrice = $("#myPrice");
+				btc.bind("keyup", function() {
+					//						cbtc.val(btc.val()*100);
+					//						mbtc.val(btc.val()*1000);
+					//						ubtc.val(btc.val()*1000000);
+					//						satoshi.val((btc.val()*100000000).toFixed(8));
+					myPrice.val(btc.val() * prc.val());
+				});
+				cbtc.bind("keyup", function() {
+					myPrice.val(cbtc.val() / 100 * prc.val());
+				});
+				mbtc.bind("keyup", function() {
+					myPrice.val(mbtc.val() / 1000 * prc.val());
+				});
+				ubtc.bind("keyup", function() {
+					myPrice.val(ubtc.val() / 1000000 * prc.val());
+				});
+				satoshi.bind("keyup", function() {
+					btc.val((satoshi.val() / 100000000).toFixed(8));
+					myPrice.val(satoshi.val() / 100000000 * prc.val());
+				});
+				$("#clear").click(function() {
+					$("#btc,#cbtc,#mbtc,#myPrice,#satoshi,#ubtc").val("");
+				});
+				//谷壳币
+				var gprc = $("#gprice");
+				var gcount = $("#gcount");
+				var gzong = $("#gzong");
+				var gbuy = $("#gbuy");
+				var gsale = $("#gsale");
+				var gbuyzong = $("#gbuyzong");
+				var gsalezong = $("#gsalezong");
+				var gzhuan = $("#gzhuan");
+				gprc.bind("keyup", function() {
+					gzong.val(gcount.val() * gprc.val());
+				});
+				gcount.bind("keyup", function() {
+					gzong.val(gcount.val() * gprc.val());
+						gbuyzong.val(gcount.val() * gbuy.val());
+						gsalezong.val(gcount.val() * gsale.val());
+				});
+				gsale.bind("keyup", function() {
+					gsalezong.val(gcount.val() * gsale.val());
+					gzhuan.val(gsalezong.val()- gbuyzong.val());
+				});
+				gbuy.bind("keyup", function() {
+					gbuyzong.val(gcount.val()* gbuy.val());
+					gzhuan.val(gsalezong.val()- gbuyzong.val());
+				});
+				gzhuan.bind("keyup", function() {
+					gzhuan.val(gsalezong.val()- gbuyzong.val());
+				});
+				$("#gclear").click(function() {
+					$("#gzhuan,#gbuy,#gcount,#gsale,#gzong,#gbuyzong,#gsalezong").val("");
+				});
+			});
+		</script>
+	</body>
+
+</html>
