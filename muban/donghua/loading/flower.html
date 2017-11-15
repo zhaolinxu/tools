@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>小花儿 loading...</title>
+		<style type="text/css">
+			.holder {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				right: 0px;
+				width: 100%;
+				height: 100%;
+				background-color: #ECE5DF;
+				min-height: 400px;
+			}
+			.preloader {
+				/* size */
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				animation: rotatePreloader 2s infinite ease-in;
+			}
+			.preloader:before, .preloader:after {
+				position: absolute;
+				content: "";
+				width: 30%;
+				height: 30%;
+				background-color: #FDFE3E;
+				z-index: 20;
+				left: 50%;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				border-radius: 50%;
+			}
+			.preloader:after {
+				width: 40%;
+				height: 40%;
+				background-color: #FED824;
+				z-index: 19;
+			}
+			@keyframes rotatePreloader {
+				0% {
+					transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+				}
+				100% {
+					transform: translateX(-50%) translateY(-50%) rotateZ(-360deg);
+				}
+			}
+			.preloader div {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+			.preloader div:before {
+				content: "";
+				position: absolute;
+				left: 50%;
+				top: 0%;
+				width: 15%;
+				height: 40%;
+				background-color: #FF69B4;
+				transform: translateX(-50%);
+				border-radius: 50%;
+			}
+			.preloader div:nth-child(1) {
+				transform: rotateZ(0deg);
+				animation: rotateCircle1 2s infinite linear;
+				z-index: 9;
+			}
+			@keyframes rotateCircle1 {
+				0% {
+					opacity: 0;
+				}
+				0% {
+					opacity: 1;
+					transform: rotateZ(36deg);
+				}
+				7% {
+					transform: rotateZ(0deg);
+				}
+				57% {
+					transform: rotateZ(0deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(2) {
+				transform: rotateZ(36deg);
+				animation: rotateCircle2 2s infinite linear;
+				z-index: 8;
+			}
+			@keyframes rotateCircle2 {
+				5% {
+					opacity: 0;
+				}
+				5.0001% {
+					opacity: 1;
+					transform: rotateZ(0deg);
+				}
+				12% {
+					transform: rotateZ(-36deg);
+				}
+				62% {
+					transform: rotateZ(-36deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(3) {
+				transform: rotateZ(72deg);
+				animation: rotateCircle3 2s infinite linear;
+				z-index: 7;
+			}
+			@keyframes rotateCircle3 {
+				10% {
+					opacity: 0;
+				}
+				10.0002% {
+					opacity: 1;
+					transform: rotateZ(-36deg);
+				}
+				17% {
+					transform: rotateZ(-72deg);
+				}
+				67% {
+					transform: rotateZ(-72deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(4) {
+				transform: rotateZ(108deg);
+				animation: rotateCircle4 2s infinite linear;
+				z-index: 6;
+			}
+			@keyframes rotateCircle4 {
+				15% {
+					opacity: 0;
+				}
+				15.0003% {
+					opacity: 1;
+					transform: rotateZ(-72deg);
+				}
+				22% {
+					transform: rotateZ(-108deg);
+				}
+				72% {
+					transform: rotateZ(-108deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(5) {
+				transform: rotateZ(144deg);
+				animation: rotateCircle5 2s infinite linear;
+				z-index: 5;
+			}
+			@keyframes rotateCircle5 {
+				20% {
+					opacity: 0;
+				}
+				20.0004% {
+					opacity: 1;
+					transform: rotateZ(-108deg);
+				}
+				27% {
+					transform: rotateZ(-144deg);
+				}
+				77% {
+					transform: rotateZ(-144deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(6) {
+				transform: rotateZ(180deg);
+				animation: rotateCircle6 2s infinite linear;
+				z-index: 4;
+			}
+			@keyframes rotateCircle6 {
+				25% {
+					opacity: 0;
+				}
+				25.0005% {
+					opacity: 1;
+					transform: rotateZ(-144deg);
+				}
+				32% {
+					transform: rotateZ(-180deg);
+				}
+				82% {
+					transform: rotateZ(-180deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(7) {
+				transform: rotateZ(216deg);
+				animation: rotateCircle7 2s infinite linear;
+				z-index: 3;
+			}
+			@keyframes rotateCircle7 {
+				30% {
+					opacity: 0;
+				}
+				30.0006% {
+					opacity: 1;
+					transform: rotateZ(-180deg);
+				}
+				37% {
+					transform: rotateZ(-216deg);
+				}
+				87% {
+					transform: rotateZ(-216deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(8) {
+				transform: rotateZ(252deg);
+				animation: rotateCircle8 2s infinite linear;
+				z-index: 2;
+			}
+			@keyframes rotateCircle8 {
+				35% {
+					opacity: 0;
+				}
+				35.0007% {
+					opacity: 1;
+					transform: rotateZ(-216deg);
+				}
+				42% {
+					transform: rotateZ(-252deg);
+				}
+				92% {
+					transform: rotateZ(-252deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(9) {
+				transform: rotateZ(288deg);
+				animation: rotateCircle9 2s infinite linear;
+				z-index: 1;
+			}
+			@keyframes rotateCircle9 {
+				40% {
+					opacity: 0;
+				}
+				40.0008% {
+					opacity: 1;
+					transform: rotateZ(-252deg);
+				}
+				47% {
+					transform: rotateZ(-288deg);
+				}
+				97% {
+					transform: rotateZ(-288deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader div:nth-child(10) {
+				transform: rotateZ(324deg);
+				animation: rotateCircle10 2s infinite linear;
+				z-index: 0;
+			}
+			@keyframes rotateCircle10 {
+				45% {
+					opacity: 0;
+				}
+				45.0009% {
+					opacity: 1;
+					transform: rotateZ(-288deg);
+				}
+				52% {
+					transform: rotateZ(-324deg);
+				}
+				102% {
+					transform: rotateZ(-324deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			/*flower1*/
+
+			.preloader.flower1 {
+				left: 25%;
+				animation-duration: 2s;
+			}
+			.preloader.flower1:before {
+				width: 20%;
+				height: 20%;
+			}
+			.preloader.flower1:after {
+				width: 25%;
+				height: 25%;
+			}
+			.preloader.flower1 div:before {
+				background-color: #FEF200;
+				width: 12%;
+				height: 60%;
+			}
+			/*flower2*/
+
+			.preloader.flower2 div:nth-child(1) {
+				transform: rotateZ(0deg);
+				animation: rotateCircleTwo1 1.5s infinite linear;
+				z-index: 4;
+			}
+			@keyframes rotateCircleTwo1 {
+				0% {
+					opacity: 0;
+				}
+				0% {
+					opacity: 1;
+					transform: rotateZ(72deg);
+				}
+				12% {
+					transform: rotateZ(0deg);
+				}
+				62% {
+					transform: rotateZ(0deg);
+				}
+				100% {
+					transform: rotateZ(-288deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower2 div:nth-child(2) {
+				transform: rotateZ(72deg);
+				animation: rotateCircleTwo2 1.5s infinite linear;
+				z-index: 3;
+			}
+			@keyframes rotateCircleTwo2 {
+				10% {
+					opacity: 0;
+				}
+				10.0001% {
+					opacity: 1;
+					transform: rotateZ(0deg);
+				}
+				22% {
+					transform: rotateZ(-72deg);
+				}
+				72% {
+					transform: rotateZ(-72deg);
+				}
+				100% {
+					transform: rotateZ(-288deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower2 div:nth-child(3) {
+				transform: rotateZ(144deg);
+				animation: rotateCircleTwo3 1.5s infinite linear;
+				z-index: 2;
+			}
+			@keyframes rotateCircleTwo3 {
+				20% {
+					opacity: 0;
+				}
+				20.0002% {
+					opacity: 1;
+					transform: rotateZ(-72deg);
+				}
+				32% {
+					transform: rotateZ(-144deg);
+				}
+				82% {
+					transform: rotateZ(-144deg);
+				}
+				100% {
+					transform: rotateZ(-288deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower2 div:nth-child(4) {
+				transform: rotateZ(216deg);
+				animation: rotateCircleTwo4 1.5s infinite linear;
+				z-index: 1;
+			}
+			@keyframes rotateCircleTwo4 {
+				30% {
+					opacity: 0;
+				}
+				30.0003% {
+					opacity: 1;
+					transform: rotateZ(-144deg);
+				}
+				42% {
+					transform: rotateZ(-216deg);
+				}
+				92% {
+					transform: rotateZ(-216deg);
+				}
+				100% {
+					transform: rotateZ(-288deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower2 div:nth-child(5) {
+				transform: rotateZ(288deg);
+				animation: rotateCircleTwo5 1.5s infinite linear;
+				z-index: 0;
+			}
+			@keyframes rotateCircleTwo5 {
+				40% {
+					opacity: 0;
+				}
+				40.0004% {
+					opacity: 1;
+					transform: rotateZ(-216deg);
+				}
+				52% {
+					transform: rotateZ(-288deg);
+				}
+				102% {
+					transform: rotateZ(-288deg);
+				}
+				100% {
+					transform: rotateZ(-288deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower2 {
+				left: 75%;
+				animation-duration: 1.5s;
+			}
+			.preloader.flower2 div:before {
+				width: 40%;
+			}
+			/*flower3*/
+
+			.preloader.flower3 div:nth-child(1) {
+				transform: rotateZ(0deg);
+				animation: rotateCircleThree1 2.5s infinite linear;
+				z-index: 6;
+			}
+			@keyframes rotateCircleThree1 {
+				0% {
+					opacity: 0;
+				}
+				0% {
+					opacity: 1;
+					transform: rotateZ(51.42857deg);
+				}
+				9.14286% {
+					transform: rotateZ(0deg);
+				}
+				59.14286% {
+					transform: rotateZ(0deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 div:nth-child(2) {
+				transform: rotateZ(51.42857deg);
+				animation: rotateCircleThree2 2.5s infinite linear;
+				z-index: 5;
+			}
+			@keyframes rotateCircleThree2 {
+				7.14286% {
+					opacity: 0;
+				}
+				7.14296% {
+					opacity: 1;
+					transform: rotateZ(0deg);
+				}
+				16.28571% {
+					transform: rotateZ(-51.42857deg);
+				}
+				66.28571% {
+					transform: rotateZ(-51.42857deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 div:nth-child(3) {
+				transform: rotateZ(102.85714deg);
+				animation: rotateCircleThree3 2.5s infinite linear;
+				z-index: 4;
+			}
+			@keyframes rotateCircleThree3 {
+				14.28571% {
+					opacity: 0;
+				}
+				14.28591% {
+					opacity: 1;
+					transform: rotateZ(-51.42857deg);
+				}
+				23.42857% {
+					transform: rotateZ(-102.85714deg);
+				}
+				73.42857% {
+					transform: rotateZ(-102.85714deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 div:nth-child(4) {
+				transform: rotateZ(154.28571deg);
+				animation: rotateCircleThree4 2.5s infinite linear;
+				z-index: 3;
+			}
+			@keyframes rotateCircleThree4 {
+				21.42857% {
+					opacity: 0;
+				}
+				21.42887% {
+					opacity: 1;
+					transform: rotateZ(-102.85714deg);
+				}
+				30.57143% {
+					transform: rotateZ(-154.28571deg);
+				}
+				80.57143% {
+					transform: rotateZ(-154.28571deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 div:nth-child(5) {
+				transform: rotateZ(205.71429deg);
+				animation: rotateCircleThree5 2.5s infinite linear;
+				z-index: 2;
+			}
+			@keyframes rotateCircleThree5 {
+				28.57143% {
+					opacity: 0;
+				}
+				28.57183% {
+					opacity: 1;
+					transform: rotateZ(-154.28571deg);
+				}
+				37.71429% {
+					transform: rotateZ(-205.71429deg);
+				}
+				87.71429% {
+					transform: rotateZ(-205.71429deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 div:nth-child(6) {
+				transform: rotateZ(257.14286deg);
+				animation: rotateCircleThree6 2.5s infinite linear;
+				z-index: 1;
+			}
+			@keyframes rotateCircleThree6 {
+				35.71429% {
+					opacity: 0;
+				}
+				35.71479% {
+					opacity: 1;
+					transform: rotateZ(-205.71429deg);
+				}
+				44.85714% {
+					transform: rotateZ(-257.14286deg);
+				}
+				94.85714% {
+					transform: rotateZ(-257.14286deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 div:nth-child(7) {
+				transform: rotateZ(308.57143deg);
+				animation: rotateCircleThree7 2.5s infinite linear;
+				z-index: 0;
+			}
+			@keyframes rotateCircleThree7 {
+				42.85714% {
+					opacity: 0;
+				}
+				42.85774% {
+					opacity: 1;
+					transform: rotateZ(-257.14286deg);
+				}
+				52% {
+					transform: rotateZ(-308.57143deg);
+				}
+				102% {
+					transform: rotateZ(-308.57143deg);
+				}
+				100% {
+					transform: rotateZ(-308.57143deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower3 {
+				top: 25%;
+				animation-duration: 2.5s;
+			}
+			.preloader.flower3:before {
+				width: 50%;
+				height: 50%;
+			}
+			.preloader.flower3:after {
+				width: 60%;
+				height: 60%;
+			}
+			.preloader.flower3 div:before {
+				width: 30%;
+				height: 30%;
+			}
+			/*flower4*/
+
+			.preloader.flower4 div:nth-child(1) {
+				transform: rotateZ(0deg);
+				animation: rotateCircleFour1 1.6s infinite linear;
+				z-index: 9;
+			}
+			@keyframes rotateCircleFour1 {
+				0% {
+					opacity: 0;
+				}
+				0% {
+					opacity: 1;
+					transform: rotateZ(36deg);
+				}
+				7% {
+					transform: rotateZ(0deg);
+				}
+				57% {
+					transform: rotateZ(0deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(2) {
+				transform: rotateZ(36deg);
+				animation: rotateCircleFour2 1.6s infinite linear;
+				z-index: 8;
+			}
+			@keyframes rotateCircleFour2 {
+				5% {
+					opacity: 0;
+				}
+				5.0001% {
+					opacity: 1;
+					transform: rotateZ(0deg);
+				}
+				12% {
+					transform: rotateZ(-36deg);
+				}
+				62% {
+					transform: rotateZ(-36deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(3) {
+				transform: rotateZ(72deg);
+				animation: rotateCircleFour3 1.6s infinite linear;
+				z-index: 7;
+			}
+			@keyframes rotateCircleFour3 {
+				10% {
+					opacity: 0;
+				}
+				10.0002% {
+					opacity: 1;
+					transform: rotateZ(-36deg);
+				}
+				17% {
+					transform: rotateZ(-72deg);
+				}
+				67% {
+					transform: rotateZ(-72deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(4) {
+				transform: rotateZ(108deg);
+				animation: rotateCircleFour4 1.6s infinite linear;
+				z-index: 6;
+			}
+			@keyframes rotateCircleFour4 {
+				15% {
+					opacity: 0;
+				}
+				15.0003% {
+					opacity: 1;
+					transform: rotateZ(-72deg);
+				}
+				22% {
+					transform: rotateZ(-108deg);
+				}
+				72% {
+					transform: rotateZ(-108deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(5) {
+				transform: rotateZ(144deg);
+				animation: rotateCircleFour5 1.6s infinite linear;
+				z-index: 5;
+			}
+			@keyframes rotateCircleFour5 {
+				20% {
+					opacity: 0;
+				}
+				20.0004% {
+					opacity: 1;
+					transform: rotateZ(-108deg);
+				}
+				27% {
+					transform: rotateZ(-144deg);
+				}
+				77% {
+					transform: rotateZ(-144deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(6) {
+				transform: rotateZ(180deg);
+				animation: rotateCircleFour6 1.6s infinite linear;
+				z-index: 4;
+			}
+			@keyframes rotateCircleFour6 {
+				25% {
+					opacity: 0;
+				}
+				25.0005% {
+					opacity: 1;
+					transform: rotateZ(-144deg);
+				}
+				32% {
+					transform: rotateZ(-180deg);
+				}
+				82% {
+					transform: rotateZ(-180deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(7) {
+				transform: rotateZ(216deg);
+				animation: rotateCircleFour7 1.6s infinite linear;
+				z-index: 3;
+			}
+			@keyframes rotateCircleFour7 {
+				30% {
+					opacity: 0;
+				}
+				30.0006% {
+					opacity: 1;
+					transform: rotateZ(-180deg);
+				}
+				37% {
+					transform: rotateZ(-216deg);
+				}
+				87% {
+					transform: rotateZ(-216deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(8) {
+				transform: rotateZ(252deg);
+				animation: rotateCircleFour8 1.6s infinite linear;
+				z-index: 2;
+			}
+			@keyframes rotateCircleFour8 {
+				35% {
+					opacity: 0;
+				}
+				35.0007% {
+					opacity: 1;
+					transform: rotateZ(-216deg);
+				}
+				42% {
+					transform: rotateZ(-252deg);
+				}
+				92% {
+					transform: rotateZ(-252deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(9) {
+				transform: rotateZ(288deg);
+				animation: rotateCircleFour9 1.6s infinite linear;
+				z-index: 1;
+			}
+			@keyframes rotateCircleFour9 {
+				40% {
+					opacity: 0;
+				}
+				40.0008% {
+					opacity: 1;
+					transform: rotateZ(-252deg);
+				}
+				47% {
+					transform: rotateZ(-288deg);
+				}
+				97% {
+					transform: rotateZ(-288deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 div:nth-child(10) {
+				transform: rotateZ(324deg);
+				animation: rotateCircleFour10 1.6s infinite linear;
+				z-index: 0;
+			}
+			@keyframes rotateCircleFour10 {
+				45% {
+					opacity: 0;
+				}
+				45.0009% {
+					opacity: 1;
+					transform: rotateZ(-288deg);
+				}
+				52% {
+					transform: rotateZ(-324deg);
+				}
+				102% {
+					transform: rotateZ(-324deg);
+				}
+				100% {
+					transform: rotateZ(-324deg);
+					opacity: 1;
+				}
+			}
+			.preloader.flower4 {
+				width: 120px;
+				height: 120px;
+				top: 75%;
+				animation-duration: 1.6s;
+			}
+			.preloader.flower4 div:before {
+				background-color: #6DE826;
+			}
+			.preloader.flower4:before {
+				background-color: #1CBA6E;
+			}
+			.preloader.flower4:after {
+				background-color: #0A9A8B;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="holder">
+			<div class="preloader flower1">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="preloader flower2">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="preloader flower3">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="preloader flower4">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</body>
+
+</html>
