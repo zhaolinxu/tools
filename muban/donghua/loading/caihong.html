@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>多个圆环</title>
+		<style type="text/css">
+			.cssload-loader-inner {
+				bottom: 0;
+				height: 105px;
+				left: 0;
+				margin: auto;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 175px;
+			}
+			.cssload-cssload-loader-line-wrap-wrap {
+				animation: cssload-spin 2300ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+				-o-animation: cssload-spin 2300ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+				-ms-animation: cssload-spin 2300ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+				-webkit-animation: cssload-spin 2300ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+				-moz-animation: cssload-spin 2300ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+				box-sizing: border-box;
+				-o-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				height: 88px;
+				left: 0;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				transform-origin: 50% 100%;
+				-o-transform-origin: 50% 100%;
+				-ms-transform-origin: 50% 100%;
+				-webkit-transform-origin: 50% 100%;
+				-moz-transform-origin: 50% 100%;
+				width: 175px;
+			}
+			.cssload-loader-line-wrap {
+				border: 7px solid transparent;
+				border-radius: 100%;
+				-o-border-radius: 100%;
+				-ms-border-radius: 100%;
+				-webkit-border-radius: 100%;
+				-moz-border-radius: 100%;
+				box-sizing: border-box;
+				-o-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				height: 175px;
+				left: 0;
+				margin: 0 auto;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 175px;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(1) {
+				animation-delay: -57.5ms;
+				-o-animation-delay: -57.5ms;
+				-ms-animation-delay: -57.5ms;
+				-webkit-animation-delay: -57.5ms;
+				-moz-animation-delay: -57.5ms;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(2) {
+				animation-delay: -115ms;
+				-o-animation-delay: -115ms;
+				-ms-animation-delay: -115ms;
+				-webkit-animation-delay: -115ms;
+				-moz-animation-delay: -115ms;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(3) {
+				animation-delay: -172.5ms;
+				-o-animation-delay: -172.5ms;
+				-ms-animation-delay: -172.5ms;
+				-webkit-animation-delay: -172.5ms;
+				-moz-animation-delay: -172.5ms;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(4) {
+				animation-delay: -230ms;
+				-o-animation-delay: -230ms;
+				-ms-animation-delay: -230ms;
+				-webkit-animation-delay: -230ms;
+				-moz-animation-delay: -230ms;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(5) {
+				animation-delay: -287.5ms;
+				-o-animation-delay: -287.5ms;
+				-ms-animation-delay: -287.5ms;
+				-webkit-animation-delay: -287.5ms;
+				-moz-animation-delay: -287.5ms;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(1) .cssload-loader-line-wrap {
+				border-color: rgb(234, 71, 71);
+				height: 158px;
+				width: 158px;
+				top: 12px;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(2) .cssload-loader-line-wrap {
+				border-color: rgb(234, 234, 71);
+				height: 133px;
+				width: 133px;
+				top: 25px;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(3) .cssload-loader-line-wrap {
+				border-color: rgb(71, 234, 71);
+				height: 109px;
+				width: 109px;
+				top: 37px;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(4) .cssload-loader-line-wrap {
+				border-color: rgb(71, 234, 234);
+				height: 84px;
+				width: 84px;
+				top: 49px;
+			}
+			.cssload-cssload-loader-line-wrap-wrap:nth-child(5) .cssload-loader-line-wrap {
+				border-color: rgb(71, 71, 234);
+				height: 60px;
+				width: 60px;
+				top: 61px;
+			}
+			@keyframes cssload-spin {
+				0%, 15% {
+					transform: rotate(0);
+					transform: rotate(0);
+				}
+				100% {
+					transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			@-o-keyframes cssload-spin {
+				0%, 15% {
+					-o-transform: rotate(0);
+					transform: rotate(0);
+				}
+				100% {
+					-o-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			@-ms-keyframes cssload-spin {
+				0%, 15% {
+					-ms-transform: rotate(0);
+					transform: rotate(0);
+				}
+				100% {
+					-ms-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			@-webkit-keyframes cssload-spin {
+				0%, 15% {
+					-webkit-transform: rotate(0);
+					transform: rotate(0);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			@-moz-keyframes cssload-spin {
+				0%, 15% {
+					-moz-transform: rotate(0);
+					transform: rotate(0);
+				}
+				100% {
+					-moz-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="cssload-loader-inner">
+			<div class="cssload-cssload-loader-line-wrap-wrap">
+				<div class="cssload-loader-line-wrap"></div>
+			</div>
+			<div class="cssload-cssload-loader-line-wrap-wrap">
+				<div class="cssload-loader-line-wrap"></div>
+			</div>
+			<div class="cssload-cssload-loader-line-wrap-wrap">
+				<div class="cssload-loader-line-wrap"></div>
+			</div>
+			<div class="cssload-cssload-loader-line-wrap-wrap">
+				<div class="cssload-loader-line-wrap"></div>
+			</div>
+			<div class="cssload-cssload-loader-line-wrap-wrap">
+				<div class="cssload-loader-line-wrap"></div>
+			</div>
+		</div>
+	</body>
+
+</html>
