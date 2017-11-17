@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>圆锥渐变</title>
+		<style type="text/css">
+			div[class^="test"] {
+				width: 200px;
+				height: 200px;
+				display: inline-block;
+			}
+			.test1 {
+				border-radius: 50%;
+				background: conic-gradient(#f06, gold);
+			}
+			.test2 {
+				border-radius: 50%;
+				background: conic-gradient(red, orange, yellow, green, teal, blue, purple);
+			}
+			.test3 {
+				background: conic-gradient(red, #ff4d00, #ff9900, #ffe600, #ccff00, #80ff00, #33ff00, #00ff1a, #00ff66, #00ffb3, cyan, #00b3ff, #0066ff, #001aff, #3300ff, #8000ff, #cc00ff, #ff00e6, #ff0099, #ff004d, red);
+				border-radius: 50%;
+			}
+			.test4 {
+				/*background: conic-gradient(deeppink 0, deeppink 30%, yellowgreen 30%, yellowgreen 70%, teal 70%, teal 100%);*/
+				background: conic-gradient(deeppink 0 30%, yellowgreen 0 70%, teal 0 100%);
+				border-radius: 50%;
+			}
+			.test5 {
+				background: conic-gradient(#000 12.5%, #fff 0 37.5%, #000 0 62.5%, #fff 0 87.5%, #000 0);
+			}
+			.test6 {
+				background: conic-gradient(#000 12.5%, #fff 0 37.5%, #000 0 62.5%, #fff 0 87.5%, #000 0);
+				background-size: 50px 50px;
+			}
+			.test7 {
+				background: repeating-conic-gradient(deeppink 0 15deg, yellowgreen 0 30deg);
+				border: 1px solid #000;
+			}
+			.test8 {
+				background: conic-gradient(#e9dc31, #a2b174, #792dfb, #df40e1, #609b81, #70c65d, #996ebc, #435ea4, #98f40e, #d9bfec, #a59c6a, #ada2c8, #42a1bb, #40d239, #8050fa, #3a83c4, #47286d, #e053d9, #f2ae56, #2a63d6, #e9dc31, #a2b174, #792dfb, #df40e1, #609b81, #70c65d, #996ebc, #435ea4, #98f40e, #d9bfec, #a59c6a, #ada2c8, #42a1bb, #40d239, #8050fa, #3a83c4, #47286d, #e053d9, #f2ae56);
+			}
+			.bg {
+				position: relative;
+				margin: 50px auto;
+				width: 400px;
+				height: 400px;
+				border-radius: 50%;
+				background: conic-gradient(#f1462c 0%, #fc5d2c 12.4%, #fff 12.5%, #fff 12.5%, #fc5d2c 12.5%, #fba73e 24.9%, #fff 24.9%, #fff 25%, #fba73e 25%, #e0fa4e 37.4%, #fff 37.4%, #fff 37.5%, #e0fa4e 37.5%, #12dd7e 49.9%, #fff 49.9%, #fff 50%, #12dd7e 50%, #0a6e3f 62.4%, #fff 62.4%, #fff 62.5%);
+				transform: rotate(-112.5deg);
+				transform-origin: 50% 50%;
+			}
+			.bg::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 370px;
+				height: 370px;
+				border-radius: 50%;
+				background: #fff;
+			}
+			.bg::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 320px;
+				height: 320px;
+				border-radius: 50%;
+				background: radial-gradient(#fff 0%, #fff 25%, transparent 25%, transparent 100%), conic-gradient(#f1462c 0 12.5%, #fba73e 0 25%, #e0fa4e 0 37.5%, #12dd7e 0 50%, #0a6e3f 0 62.5%, #fff 0 100%);
+			}
+			.point {
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				top: 50%;
+				background: radial-gradient(#467dc6 0%, #a4c6f3 100%);
+				border-radius: 50%;
+				z-index: 999;
+			}
+			.point::before {
+				content: "";
+				position: absolute;
+				width: 5px;
+				height: 350px;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(0);
+				border-radius: 100% 100% 5% 5%;
+				background: linear-gradient( 180deg, #9bc7f6 0, #467dc6 50%, transparent 50%, transparent 100%);
+				animation: rotate 3s cubic-bezier(.93, 1.32, .89, 1.15) infinite;
+			}
+			@keyframes rotate {
+				50% {
+					transform: translate(-50%, -50%) rotate(150deg);
+				}
+				100% {
+					transform: translate(-50%, -50%) rotate(150deg);
+				}
+			}
+			.trajectory {
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				position: relative;
+				margin: 20px auto;
+				background: #3e87ff;
+			}
+			.trajectory *[class^="circle"] {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+			}
+			.circle1 {
+				width: 90px;
+				height: 90px;
+				background: conic-gradient(transparent 0, #b3defe 0 5deg, transparent 5deg), conic-gradient(transparent 8deg, #a4d7fe 8deg 15deg, transparent 15deg), conic-gradient(transparent 18deg, #95d1fe 18deg 27deg, transparent 27deg), conic-gradient(transparent 30deg, #86cafd 30deg 41deg, transparent 41deg), conic-gradient(transparent 44deg, #77c4fd 44deg 57deg, transparent 57deg), conic-gradient(transparent 60deg, #67bdfd 60deg 75deg, transparent 75deg), conic-gradient(transparent 78deg, #58b7fd 78deg 95deg, transparent 95deg), conic-gradient(transparent 98deg, #49b0fd 98deg 117deg, transparent 117deg), conic-gradient(transparent 120deg, #3aaafc 120deg 141deg, transparent 141deg), conic-gradient(transparent 144deg, #2ba3fc 144deg 167deg, transparent 167deg), conic-gradient(transparent 170deg, #1c9cfc 170deg 195deg, transparent 195deg), conic-gradient(transparent 198deg, #0d96fc 198deg 225deg, transparent 225deg), conic-gradient(transparent 228deg, #038ff6 228deg 257deg, transparent 257deg), conic-gradient(transparent 260deg, #0386e7 260deg 291deg, transparent 291deg);
+			}
+			.circle1:after {
+				content: '';
+				width: 70px;
+				height: 70px;
+				background: #3e87ff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+			}
+			.circle2 {
+				width: 64px;
+				height: 64px;
+				background: #fff;
+			}
+			.circle2:after {
+				content: '';
+				width: 44px;
+				height: 44px;
+				background: #3e87ff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+			}
+			.circle3 {
+				width: 20px;
+				height: 20px;
+				background: #6ff2b6;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="test1"></div>
+		<div class="test2"></div>
+		<div class="test3"></div>
+		<div class="test4"></div>
+		<div class="test5"></div>
+		<div class="test6"></div>
+		<div class="test7"></div>
+		<div class="test8"></div>
+		<div class="bg">
+			<div class="point"></div>
+		</div>
+		<div class="trajectory">
+			<div class="circle1"></div>
+			<div class="circle2"></div>
+			<div class="circle3"></div>
+		</div>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+		<script src="//leaverou.github.io/conic-gradient/conic-gradient.js"></script>
+	</body>
+
+</html>
