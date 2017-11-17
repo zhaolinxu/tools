@@ -27,10 +27,10 @@
 
 
 
- 
 
 
- 
+
+
 <div class="menu">
 <ul>
 <li><b><a href="index.html"><span>颜色表大全</span></a></b></li>
@@ -39,17 +39,18 @@
 <li><b><a href="rgb-peisebiao.html"><span>RGB颜色表</span></a></b></li>
 <li><b><a href="sejieban.html"><span><font color=#fcff00>色阶板</font></span></a></b></li>
 <li><b><a href="yansedaimabiao.html"><span>颜色代码表</span></a></b></li>
+				<li><b><a href="rgb-to-hex.html"><span>RGB ⇌ HEX</span></a></b></li>
 </ul>
 </div>
 
   <div class="wrap">
-  <div class="article_address"><span class="l">以下是：<b>色阶表</b>   
+  <div class="article_address"><span class="l">以下是：<b>色阶表</b>
 </span>
 	<span  class="r" style="padding-top:5px;padding-left:240px;">
-	温馨提示：快速查找颜色请按 Ctrl+F</span>	
+	温馨提示：快速查找颜色请按 Ctrl+F</span>
 	</div>
 
- 
+
 
 
 <DIV align=center>
@@ -85,7 +86,7 @@ function DoColor(c, l)
   r = '0x' + c.substring(1, 3);
   g = '0x' + c.substring(3, 5);
   b = '0x' + c.substring(5, 7);
-  
+
   if(l > 120)
   {
     l = l - 120;
@@ -118,37 +119,37 @@ function EndColor()
 }
 </SCRIPT>
 
-      <SCRIPT language=JavaScript event=onclick for=ColorTable 
+      <SCRIPT language=JavaScript event=onclick for=ColorTable
       type=text/javascript>
   SelRGB = event.srcElement.bgColor;
   EndColor();
 </SCRIPT>
 
-      <SCRIPT language=JavaScript event=onmouseover for=ColorTable 
+      <SCRIPT language=JavaScript event=onmouseover for=ColorTable
       type=text/javascript>
   RGB.innerText = event.srcElement.bgColor;
   EndColor();
 </SCRIPT>
 
-      <SCRIPT language=JavaScript event=onmouseout for=ColorTable 
+      <SCRIPT language=JavaScript event=onmouseout for=ColorTable
       type=text/javascript>
   RGB.innerText = SelRGB;
   EndColor();
 </SCRIPT>
 
-      <SCRIPT language=JavaScript event=onclick for=GrayTable 
+      <SCRIPT language=JavaScript event=onclick for=GrayTable
       type=text/javascript>
   SelGRAY = event.srcElement.title;
   EndColor();
 </SCRIPT>
 
-      <SCRIPT language=JavaScript event=onmouseover for=GrayTable 
+      <SCRIPT language=JavaScript event=onmouseover for=GrayTable
       type=text/javascript>
   GRAY.innerText = event.srcElement.title;
   EndColor();
 </SCRIPT>
 
-      <SCRIPT language=JavaScript event=onmouseout for=GrayTable 
+      <SCRIPT language=JavaScript event=onmouseout for=GrayTable
       type=text/javascript>
   GRAY.innerText = SelGRAY;
   EndColor();
@@ -171,7 +172,7 @@ function EndColor()
         <TBODY>
         <TR>
           <TD>
-            <TABLE id=ColorTable style="CURSOR: hand" cellSpacing=0 
+            <TABLE id=ColorTable style="CURSOR: hand" cellSpacing=0
             cellPadding=0 border=0>
               <SCRIPT language=JavaScript type=text/javascript>
 function wc(r, g, b, n)
@@ -205,7 +206,7 @@ var cnum = new Array(1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0,
 
               <TBODY></TBODY></TABLE></TD>
           <TD>
-            <TABLE id=GrayTable style="CURSOR: hand" cellSpacing=0 cellPadding=0 
+            <TABLE id=GrayTable style="CURSOR: hand" cellSpacing=0 cellPadding=0
             border=0>
               <SCRIPT language=JavaScript type=text/javascript>
   for(i = 255; i >= 0; i -= 8.5)
@@ -218,19 +219,19 @@ var cnum = new Array(1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0,
       <TABLE cellSpacing=10 cellPadding=0 border=0>
         <TBODY>
         <TR>
-          <TD align=middle rowSpan=2>选中色彩 
-            <TABLE id=ShowColor height=30 cellSpacing=0 cellPadding=0 width=40 
+          <TD align=middle rowSpan=2>选中色彩
+            <TABLE id=ShowColor height=30 cellSpacing=0 cellPadding=0 width=40
             border=1>
               <TBODY>
               <TR>
                 <TD></TD></TR></TBODY></TABLE></TD>
-          <TD rowSpan=2>基色: <SPAN id=RGB></SPAN><SPAN 
-            style="FONT-SIZE: 9pt"><FONT color=#666666><BR>亮度: <SPAN 
-            id=GRAY>120</SPAN><BR>代码: <INPUT id=SelColor size=7 name=TEXT> 
+          <TD rowSpan=2>基色: <SPAN id=RGB></SPAN><SPAN
+            style="FONT-SIZE: 9pt"><FONT color=#666666><BR>亮度: <SPAN
+            id=GRAY>120</SPAN><BR>代码: <INPUT id=SelColor size=7 name=TEXT>
             </FONT></SPAN></TD>
           <TD><INPUT id=Ok type=submit value=确定> </TD></TR>
         <TR>
-          <TD><INPUT onclick=window.close(); type=button value=取消> 
+          <TD><INPUT onclick=window.close(); type=button value=取消>
         </TD></TR></TBODY></TABLE></CENTER></DIV><![endif]--><!--[if !IE]>-->
 <h3>因为兼容性问题，色阶板功能只能在IE浏览器中运行</h3>
 <!--<![endif]-->
@@ -1418,7 +1419,7 @@ var cnum = new Array(1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0,
           <TD>#000080</TD>
           <TD width=30 bgColor=#000000 height=30></TD>
           <TD>#000000</TD></TR></TBODY></TABLE></CENTER></DIV></TD></TR></TBODY></TABLE></CENTER>
-  
+
 
  </div>
 </div>
@@ -1430,8 +1431,8 @@ var cnum = new Array(1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0,
   <TBODY>
   <TR>
     <TD vAlign=center align=middle>
-         <div style="margin-bottom:5px;"> 
-     </div> 
+         <div style="margin-bottom:5px;">
+     </div>
     </TD></TR>
   <TR>
     <TD vAlign=center align=middle>以上资料内容来源于网络，所有内容仅供学习参考
@@ -1440,10 +1441,10 @@ var cnum = new Array(1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0,
   <TD vAlign=center align=middle> <span class="scrolltop" onclick="window.scrollTo(0,0);">回到顶部</span>
        </TD>
 	     </TR>
-	   
- 
-	   
-	   
+
+
+
+
 	   </TR></TBODY></TABLE></div>
     <!-- foot -->
 </BODY></HTML>

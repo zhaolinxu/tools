@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+.ball {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.ball:before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  margin-left: -50%;
+  margin-top: -50%;
+  left: -100%;
+
+  animation: position 2s infinite cubic-bezier(.25,0,.75,1), size 2s infinite cubic-bezier(.25,0,.75,1);
+}
+
+.ball-1:before {
+  animation-delay: 0s, -.5s;
+    background: rgba( 242, 80, 34, .75);
+}
+.ball-2:before {
+  animation-delay: -.5s, -1s;
+    background: rgba( 127, 186, 0, .75);
+}
+.ball-3:before {
+  animation-delay: -1s, -1.5s;
+    background: rgba( 255, 185, 1, .75);
+}
+.ball-4:before {
+  animation-delay: -1.5s, -2s;
+    background: rgba( 1, 164, 239, .75);
+}
+
+.spinner {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+@keyframes position {
+  50% {
+    left: 100%;
+  }
+}
+
+@keyframes size {
+  50% {
+    transform: scale(.5,.5);
+  }
+}
+
+
+		</style>
+	</head>
+
+	<body>
+<div class="spinner">
+  <div class="ball ball-1"></div>
+  <div class="ball ball-2"></div>
+  <div class="ball ball-3"></div>
+  <div class="ball ball-4"></div>
+</div>
+
+
+	</body>
+
+</html>
