@@ -1,0 +1,36 @@
+article,aside,blockquote,body,button,code,dd,dialog,div,dl,dt,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,input,legend,li,nav,ol,p,pre,section,td,textarea,th,ul{margin:0;padding:0}
+input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}
+li,ol,ul{list-style:none}
+em,i{font-style:normal}
+del{text-decoration:line-through}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}
+img{border:0;max-width:100%}
+img,input{vertical-align:middle}
+a:focus,input:focus{outline:0}
+a{color:#353d44;text-decoration:none}
+*{outline:0;-webkit-tap-highlight-color:transparent;-webkit-box-sizing:border-box}
+html{-webkit-text-size-adjust:none;overflow-y:scroll}
+body{min-width:320px;line-height:1.5;color:#353d44;font-family:Arial,Helvetica,STHeiTi,sans-serif;background:#F4F4F4;width:100%}
+.w{margin:0 auto;max-width:15rem}
+html{font-size:21.33px}
+body{font-size:12px}
+button {padding: 0;border: none;background-color: transparent;}
+/* 解决rem屏幕闪动的问题 */
+
+@media (min-width: 320px) {html {font-size: 44.4444px;}}
+@media (min-width: 360px) {html {font-size: 50px;}}
+@media (min-width: 375px) {html {font-size: 52.0833px;}}
+@media (min-width: 384px) {html {font-size: 53.3333px;}} 
+@media (min-width: 414px) {html {font-size: 57.5px;}}  
+@media (min-width: 448px) {html {font-size: 62.2222px;}}
+@media (min-width: 480px) {html {font-size: 66.6667px;}}  
+@media (min-width: 512px) {html {font-size: 71.1111px;}} 
+@media (min-width: 544px) {html {font-size: 75.5556px;}}  
+@media (min-width: 576px) {html {font-size: 80px;}}  
+@media (min-width: 608px) {html {font-size: 84.4444px;}} 
+@media (min-width: 640px) {html {font-size: 88.8889px;}}
+@media (min-width: 720px) {html {font-size: 100px;}}

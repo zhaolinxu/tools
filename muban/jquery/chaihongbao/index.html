@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+	<head><link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
+		<link rel="stylesheet" href="base.css">
+		<title></title>
+		<style type="text/css">
+html,body{height: 100%;width: 100%;}
+    /* 跑马灯 */
+    .slide_box li {width: 5rem;line-height: 0.6rem;float: left;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;text-align: center;}
+    .packet {background: url("img/invitepacket_bg.png") no-repeat;background-size: 100% 100%;height: 100%;width: 100%;position: relative;overflow: hidden;}
+    .packet_hd {position: relative;width: 90%;height: 0.6rem;margin: 0 auto;overflow: hidden;color: #fff;}
+    .slide_box {position: absolute;left: 0;}
+    /* 活动规则 */
+    .rule {position: absolute;right: 3.75%;top: 30.625%;width: 14.27%;}
+    .rule img {width: 100%;}
+    /* 红包盒子 */
+    .packet_bd {text-align: center;position: absolute;bottom: 27.8%;left: 50%;margin-left: -50%;width: 100%;animation: shake2 1s linear infinite;height: 30.86%;}
+    .packet_bd img {width: 45.69%;}
+    .packet_box {position: relative;z-index: 20;height: 100%;}
+    .packet_top_down,.packet_top_up,.packet_gain_title,.gain_money,.packet_top_bg,.packet_open {position: absolute;left: 50%;transform: translateX(-50%);}
+    .packet_top_up {top: -45%;z-index: 30;transform: translateX(-50%) rotateX(-90deg);transition: all 100ms 0.1s;transform-origin: bottom;backface-visibility: hidden;}
+    .packet_top_bg {top: -24%;z-index: 30;transition: all 300ms;opacity: 0;}
+    .packet_top_down {height: 44.02%;  transition: all 100ms;transform-origin: top;z-index: 30;backface-visibility: hidden;}
+    .packet_top_down_tf {transform: translateX(-50%) translateY(10px) rotateX(180deg);z-index: 10;}
+    .packet_top_up_tf {transform: translateX(-50%) translateY(10px) rotateX(-20deg);z-index: 10;}
+    .packet_open {top: 25%;z-index: 40;font-size: 0.4rem;color: #fff;padding-top: 1rem;}
+    .gain_money {position: absolute;top: 34%;z-index: 40;font-size: 0.4rem;color: #fff;opacity: 0;transition: all 1s;}
+    .packet_gain_title {position: absolute;top: 68%;width: 100%;z-index: 40;color: #fff;}
+    .packet_animation {position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);width: 60%;height: 100%;animation: bgchange 500ms ease 200ms;z-index: 50;}
+    /* 底部展示 */
+    .packet_ft {position: absolute;bottom: 4%;width: 100%;display: flex;}
+    .packet_ft span {color: #ffd36b;text-align: center;font-size: 0.25rem;}
+    .packet_ft span i {font-style: normal;}
+    .packet_persons {width: 30.97%;}
+    .packet_persons i {color: #00ff00;}
+    .packet_num {width: 29.16%;}
+    .packet_num i {color: #f40001;}
+    .packet_money {width: 39.5%;}
+    .packet_money i {color: #00ffff;}
+    .activity_info {position: absolute;bottom: 16.95%;width: 100%;}
+    .activity_info p {color: #fff;font-size: 0.27rem;margin-top: 0.1rem;text-align: center;width: 100%;}
+    /* 弹框 */
+    .cover {position: absolute;top: 0;height: 100%;width: 100%;left: 0;display: none;}
+    .cover_content {position: absolute;left: 50%;top: 50%;width: 74.58%;height: 29.92%;transform: translate(-50%, -50%);background: url("img/tishikuang1.png") no-repeat;background-size: 100% 100%;}
+    .cover_money,.cover_btn,.cover_messages {position: absolute;width: 100%;text-align: center;font-size: 0.32rem;}
+    .cover_money {top: 42.75%;}
+    .cover_messages {top: 55.96%;}
+    .cover_btn {top: 71%;width: 38.89%;color: #fff;background: url("img/konganniu3.png") no-repeat;background-size: 100% 100%;left: 50%;height: 19.79%;transform: translateX(-50%);}
+    /*动画： 左右晃动型 */
+    @keyframes shake1 {
+      0% {
+        transform: translateX(0px);
+      }
+      25% {
+        transform: translateX(-10px);
+      }
+      50% {
+        transform: translateX(0px);
+      }
+      75% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+    /* 抖动型 */
+    @keyframes shake2 {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      5% {
+        transform: rotateZ(-5deg);
+      }
+      10% {    
+        transform: rotateZ(0deg);
+      }
+      15% {
+        transform: rotateZ(5deg);
+      }
+      20% {
+        transform: rotateZ(0deg);
+      }
+    }
+
+    /* 红包打开周围星星动画 */
+    @keyframes bgchange {
+      0% {
+        background: url("img/hongbaoyongyanhua03.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      25% {
+        background: url("img/hongbaoyongyanhua04.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      50% {
+        background: url("img/hongbaoyongyanhua05.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      75% {
+        background: url("img/hongbaoyongyanhua06.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      100% {
+        background: url("img/hongbaoyongyanhua07.png") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+		</style>
+	</head>
+
+	<body>
+<div class="packet">
+    <!-- 跑马灯 -->
+    <div class="packet_hd" id="box">
+      <ul class="slide_box" id="oUl">
+        <li id="lis"></li>
+      </ul>
+    </div>
+    <div class="rule">
+      <a class="notice" target="_blank" href="https://hjm100.cn">
+        <img class="packet_box" src="img/huodongzhongxin3.png" alt="鸿基梦">
+      </a>
+    </div>
+    <!-- 红包 -->
+    <div class="packet_bd">
+      <img class="packet_box" src="img/packet_bottom.png" alt="红包">
+      <img class="packet_top_down" id="packet_top_down" src="img/packet_top0.png" alt="红包">
+      <img class="packet_top_up" id="packet_top_up" src="img/packet_top1.png" alt="红包">
+      <img class="packet_top_bg" id="packet_top_bg" src="img/hongbaodakaiguang01.png" alt="">
+      <div id="packetAnimation"></div>
+      <p class="gain_money" id="gainMoney">10.5元</p>
+      <button onclick="openClick()" class="packet_open" id="openBtn">点击领取</button>
+      <div class="packet_gain_title">
+        <p>河北家乡棋牌</p>
+        <p>发给您一个红包</p>
+      </div>
+    </div>
+    <div class="activity_info">
+      <p>已有<i>1000</i>人参与活动</p>
+      <p>已发红包<i>1</i>万元</p>
+    </div>
+    <!-- 数据显示 -->
+    <p class="packet_ft">
+      <span class="packet_persons">成功邀请<i>10</i>人</span>
+      <span class="packet_num">可用机会<i>5</i>次</span>
+      <span class="packet_money">获得现金<i>140</i>元</span>
+    </p>
+    <!-- 弹框 -->
+    <div class="cover" onclick="popCover()" id="cover">
+      <div class="cover_content">
+        <p class="cover_money">您已获得红包<i>6.6</i>元</p>
+        <p class="cover_messages">完成分享即可领取!!!</p>
+        <button class="cover_btn" onclick="firstShare()">分享</button>
+      </div>
+    </div>
+  </div>
+  <script>
+  // 初始化相关数据(可以让后台给你传输)
+  var firstMoney = false;
+  // 接口（模拟数据）
+  var redpackage = {
+      activePeople:5159,             //参与活动总人数
+      totalPrice:89807,              //已发红包总钱数
+      chance:0,                      //可用的抽奖机会
+      firstMoney:627,                //第一次抽到的钱数
+      invitePeople:5,                //成功邀请的人数
+      qrcode:"http://www.hjm100.cn", //分享二维码链接
+      shareTimes:0,                  //分享次数(是否第一次分享成功,0未分享)
+      userMoney:1244,                //用户获得现金的总钱数
+      userName:'鸿基',               //用户姓名
+      luckInfo:[                     //跑马灯的假数据
+          {name:"1鸿基梦",money:10000},
+          {name:"2啊啊啊啊啊",money:20000},
+          {name:"3啊啊",money:30000},
+          {name:"4啊啊啊...",money:40000},
+          {name:"5啊啊",money:50000},
+          {name:"6啊啊啊",money:60000},
+          {name:"7啊啊啊",money:70000}
+      ] 
+  }
+  // 跑马灯数据(因为数据是假数据可以使用数组的sort对其打乱顺序来迷惑用户)
+  // Math.random() 产生一个0到1的随机数
+  var datas = redpackage.luckInfo.sort(function(){ return 0.5 - Math.random() })
+  // 获取dom节点
+  var oUl = document.getElementsByClassName("slide_box")[0],
+      lis = oUl.getElementsByTagName("li"),
+      box = document.querySelector(".packet_hd");
+
+  /*----------------------------跑马灯方法---------------------------------*/
+
+  initdata() //初始化dem结构
+  slide()    //启动跑马灯
+
+  // 数据渲染页面
+  function initdata(){
+    var str = '';
+    for(var i = 0 ; i<datas.length ; i++){
+      str += '<li id="lis" v-for="data in datas">恭喜玩家'
+          +  datas[i].name+' 抽的红包 '+ switchMoney(datas[i].money)
+          +  '元</li>'
+    }
+    oUl.innerHTML = str;
+  }
+
+  //跑马灯动画
+  function slide(){
+    // 加10像素的容错以免超宽
+    oUl.style.width = lis.length * lis[0].offsetWidth + 10 + "px";
+    var left = null;
+    //定时器
+    setInterval(function(){
+      left -= 1;
+      if (left < -oUl.offsetWidth) left = 0;
+      oUl.style.left = left + "px";
+    }, 20); //动画速度
+  }
+
+  //插入数据（有两种方案：一种是改变数据结构，另外一种是直接在html中插入标签）
+  //html插入方式请访问：https://gitee.com/hjm100/codes/96qr5kp3extczm0av8ogb61
+
+  /**更新跑马灯数据updateSlide(usermoney,username)
+   * @param usermoney  玩家获取的金额（必填number）
+   * @param username   玩家的姓名    （必填string）
+   * 模拟数据：
+   * usermoney = 60000
+   * username  = '鸿基'
+   */
+
+  function updateSlide(usermoney,username) {
+    //获取div盒子的宽度
+    var d = parseInt(box.offsetWidth),
+       //获取Ul的宽度
+        u = Math.abs(parseInt(oUl.style.width)),
+       //获取li的宽度
+       li = parseInt(lis[0].offsetWidth),
+       //获取滑动的偏移量
+        f = Math.abs(parseInt(oUl.style.left));
+    if (isNaN(f)) f = 0; //保险起见当没有滑动的时候给偏移量设置初始值
+    var g = Math.ceil((f + d % li) / li) + Math.floor(d / li);
+    if (g >= lis.length) g = lis.length;
+    //更新数据也可以
+    datas.splice(g, 0, {money:usermoney , name: username });
+    oUl.style.width = u + li + "px";
+    //重新生成html结构
+    initdata()
+  }
+
+  /*----------------------------打开红包方法---------------------------------*/
+
+  // 获取dom节点
+  var cover           = document.querySelector('#cover'),
+      cover_money     = document.querySelector('.cover_money'),
+      cover_messages  = document.querySelector('.cover_messages'),
+      packet_top_down = document.querySelector('#packet_top_down'),
+      packet_top_up   = document.querySelector('#packet_top_up'),
+      packet_top_bg   = document.querySelector('#packet_top_bg'),
+      gainMoney       = document.querySelector('#gainMoney'),
+      openBtn         = document.querySelector('#openBtn'),
+      packetAnimation = document.querySelector('#packetAnimation');
+
+  // 打开红包(第一次打开的时候去分享)
+  function openClick(){
+    // 打开红包的时候可以先请求接口（假设数据已经成功）
+    // 接口根据需求而定：
+    var thenMoney = 3000 // 当前抽到的钱数
+    var result    = 3    // 红包领取状态 0 不成功 1成功 3第一次领取
+    //第一次打开红包
+    if(redpackage.shareTimes || result == 3){
+      //添加红包特效
+      openAnimate()
+      //打开弹框
+      openCover(1000)
+      //设置弹框的显示内容
+      cover_money.innerHTML = '您已获得红包'+switchMoney(thenMoney)+'元'
+      gainMoney.innerHTML   =  switchMoney(thenMoney)
+      cover_messages        = "完成分享即可领取!!!"
+      return false;
+    }
+
+    // 判断用户测试是否存在抽奖次数
+    if(result == 0){
+      // 打开弹框
+      openCover(0)
+      // 设置弹框的显示内容
+      cover_money.innerHTML = '您已无抽奖次数'
+      cover_messages        = "请在成功邀请玩家后再抽取"
+      return false;
+    }
+
+    // 抽奖成功的时候
+    if(result == 1){
+      // 在这里可以设置用户的抽检次数和用户的累计金额
+      if(thenMoney >= 2000){
+        //超过20元的时候跑马灯下一条播放用户信息
+        updateSlide(thenMoney,redpackage.userName) 
+      }
+      gainMoney.innerHTML   =  switchMoney(thenMoney)
+      //添加红包特效
+      openAnimate()
+      return true;
+    }    
+ }
+
+  //打开红包特效
+  function openAnimate(){
+    packet_top_bg.style.opacity = 1;
+    gainMoney.style.opacity = 1;
+    openBtn.style.display = "none";
+    packet_top_down.classList.add("packet_top_down_tf");
+    packet_top_up.classList.add("packet_top_up_tf");
+    packetAnimation.classList.add("packet_animation");
+  }
+
+  // 关闭弹框弹框
+  function popCover() {
+    cover.style.display = "none";
+  }
+
+  //打开弹框
+  function openCover(time) {
+    setTimeout(function(){
+      cover.style.display = "block";
+    }, time); //缓慢弹出是为了先让用户看到动画效果
+  }
+  
+  // 分享函数(第一次访问页面的时候需要分享才可以领奖)
+  // qrcode为二维码生成地址 此处你可以给客户端传递多个参数
+  // encodeURIComponent(qrcode)url编码
+  // 解码需要：decodeURIComponent(qrcode)
+  function firstShare() {
+    console.log("这里是分享的代码");
+    var receive = encodeURIComponent(qrcode);
+    var url = "native://?action=share&" + "qrencode=" + receive;
+    //与客户端之间的交互
+    native_call(url);
+  }
+
+  //钱数转换（服务器为了方便计算可能给你传的是分值，你需要转化成元切保留两位小数）
+  function switchMoney(money){
+    return (money/100).toFixed(2)
+  }
+
+  //与客户端之间的交互(一般使用分享或者与客户端交互显示webview)
+  function native_call(url){
+    var iframe = document.createElement("IFRAME");
+    iframe.setAttribute("src", url);
+    document.documentElement.appendChild(iframe);
+    iframe.parentNode.removeChild(iframe);
+    iframe = null;
+  }
+
+  //抽到奖品后做的事情
+  function goBackpack(){
+    console.log("前往个人物品查看奖励");
+  }
+</script>
+	</body>
+
+</html>
