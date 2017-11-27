@@ -102,8 +102,13 @@ input[disabled] {
 	color: #fff;
 }
 
-/*android 上去掉语音输入按钮*/
+/*去除谷歌浏览器input自动填充黄色背景*/
 
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/*android 上去掉语音输入按钮*/
 input::-webkit-input-speech-button {
 	display: none
 }

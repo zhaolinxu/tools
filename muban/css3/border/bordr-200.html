@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
+		<title> retina屏幕实现真正的1px边框</title>
+		<style type="text/css">
+			/* 去掉元素原有的边框 */
+
+			.box {
+				width: 200px;
+				height: 50px;
+				position: relative;
+				border: none;
+				margin-bottom: 50px;
+			}
+			/* 通过设置伪元素放大到2倍的宽高，设置1px边框，再缩小1倍，以达到0.5px边框的效果*/
+
+			.box:after {
+				content: '';
+				display: block;
+				width: 200%;
+				height: 200%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				box-sizing: border-box;
+				border: 0px solid #aaa;
+				-webkit-transform-origin: left top;
+				transform-origin: left top;
+				-webkit-transform: scale(.5);
+				transform: scale(.5);
+			}
+			.rt-bd-all:after {
+				border-width: 1px;
+			}
+			.tr-bd-b:after {
+				border-bottom-width: 1px;
+			}
+			.tr-bd-t:after {
+				border-top-width: 1px;
+			}
+			.tr-bd-l:after {
+				border-left-width: 1px;
+			}
+			.tr-bd-r:after {
+				border-right-width: 1px;
+			}
+		</style>
+	</head>
+
+	<body>
+<div class="box rt-bd-all"></div>
+<div class="box tr-bd-t"></div>
+<div class="box tr-bd-b"></div>
+<div class="box tr-bd-l"></div>
+<div class="box tr-bd-r"></div>
+		<script type="text/javascript">
+		</script>
+
+	</body>
+
+</html>
