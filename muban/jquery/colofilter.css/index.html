@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>纯CSS3实现图片双色调彩色滤光特效|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/default.css"> -->
+	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/prism.css">
+	<!--[if IE]>
+		<script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv-printshiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+	<article class="htmleaf-container">
+		
+		<div class="container">
+			 <p>Examples <i>(点击图片可以将class拷贝到剪贴板中)</i>: </p>
+		      <div class="filters"> 
+		        <div id="blend-blue" data-color="blue" data-tint="" data-clipboard-text="blend-blue" class="blend-blue block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-blue-dark" data-color="blue" data-tint="-dark" data-clipboard-text="blend-blue-dark" class="blend-blue-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-blue-light" data-color="blue" data-tint="-light" data-clipboard-text="blend-blue-light" class="blend-blue-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-orange" data-color="orange" data-tint="" data-clipboard-text="blend-orange" class="blend-orange block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-orange-dark" data-color="orange" data-tint="-dark" data-clipboard-text="blend-orange-dark" class="blend-orange-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-orange-light" data-color="orange" data-tint="-light" data-clipboard-text="blend-orange-light" class="blend-orange-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-red" data-color="red" data-tint="" data-clipboard-text="blend-red" class="blend-red block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-red-dark" data-color="red" data-tint="-dark" data-clipboard-text="blend-red-dark" class="blend-red-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-red-light" data-color="red" data-tint="-light" data-clipboard-text="blend-red-light" class="blend-red-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-green" data-color="green" data-tint="" data-clipboard-text="blend-green" class="blend-green block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-green-dark" data-color="green" data-tint="-dark" data-clipboard-text="blend-green-dark" class="blend-green-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-green-light" data-color="green" data-tint="-light" data-clipboard-text="blend-green-light" class="blend-green-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-yellow" data-color="yellow" data-tint="" data-clipboard-text="blend-yellow" class="blend-yellow block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-yellow-dark" data-color="yellow" data-tint="-dark" data-clipboard-text="blend-yellow-dark" class="blend-yellow-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-yellow-light" data-color="yellow" data-tint="-light" data-clipboard-text="blend-yellow-light" class="blend-yellow-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-purple" data-color="purple" data-tint="" data-clipboard-text="blend-purple" class="blend-purple block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-purple-dark" data-color="purple" data-tint="-dark" data-clipboard-text="blend-purple-dark" class="blend-purple-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-purple-light" data-color="purple" data-tint="-light" data-clipboard-text="blend-purple-light" class="blend-purple-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-pink" data-color="pink" data-tint="" data-clipboard-text="blend-pink" class="blend-pink block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-pink-dark" data-color="pink" data-tint="-dark" data-clipboard-text="blend-pink-dark" class="blend-pink-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-pink-light" data-color="pink" data-tint="-light" data-clipboard-text="blend-pink-light" class="blend-pink-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-blue-yellow" data-color="blue-yellow" data-tint="" data-clipboard-text="blend-blue-yellow" class="blend-blue-yellow block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-blue-yellow-dark" data-color="blue-yellow" data-tint="-dark" data-clipboard-text="blend-blue-yellow-dark" class="blend-blue-yellow-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-blue-yellow-light" data-color="blue-yellow" data-tint="-light" data-clipboard-text="blend-blue-yellow-light" class="blend-blue-yellow-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-pink-yellow" data-color="pink-yellow" data-tint="" data-clipboard-text="blend-pink-yellow" class="blend-pink-yellow block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-pink-yellow-dark" data-color="pink-yellow" data-tint="-dark" data-clipboard-text="blend-pink-yellow-dark" class="blend-pink-yellow-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-pink-yellow-light" data-color="pink-yellow" data-tint="-light" data-clipboard-text="blend-pink-yellow-light" class="blend-pink-yellow-light block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-red-blue" data-color="red-blue" data-tint="" data-clipboard-text="blend-red-blue" class="blend-red-blue block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-red-blue-dark" data-color="red-blue" data-tint="-dark" data-clipboard-text="blend-red-blue-dark" class="blend-red-blue-dark block"><img src="1.jpg"/><span>lorem</span></div>
+		        <div id="blend-red-blue-light" data-color="red-blue" data-tint="-light" data-clipboard-text="blend-red-blue-light" class="blend-red-blue-light block"><img src="1.jpg"/><span>lorem</span></div>
+		      </div>
+		</div>
+		<!-- <footer class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/html5/SVG/201506232091.html">
+			  <img src="related/1.jpg" width="300" alt="HTML5 SVG超酷雷达扫描式页面切换特效"/>
+			  <h3>HTML5 SVG超酷雷达扫描式页面切换特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Layout-Interface/201506132027.html">
+			  <img src="related/2.jpg" width="300" alt="jQuery和CSS3超炫3D整屏垂直滚动页面特效"/>
+			  <h3>jQuery和CSS3超炫3D整屏垂直滚动页面特效</h3>
+			</a>
+		</footer> -->
+	</article>
+	
+	<script src="js/clipboard.min.js"></script>
+  	<script src="js/main.js"></script>
+</body>
+</html>
