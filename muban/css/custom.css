@@ -7,34 +7,29 @@
 * =====================================================
 */
 
-
 * {
 	margin: 0px;
 	padding: 0px;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 *:before, *:after {
-            box-sizing: border-box;
-        }
-
-        *, *:before, *:after {
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            /* 在X5新内核Blink中，在排版页面的时候，会主动对字体进行放大，会检测页面中的主字体，当某一块字体在我们的判定规则中，认为字号较小，并且是页面中的主要字体，就会采取主动放大的操作。然而这不是我们想要的，可以采取给最大高度解决 */
-            max-height: 100000px;
-        }
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* 在X5新内核Blink中，在排版页面的时候，会主动对字体进行放大，会检测页面中的主字体，当某一块字体在我们的判定规则中，认为字号较小，并且是页面中的主要字体，就会采取主动放大的操作。然而这不是我们想要的，可以采取给最大高度解决 */
+	max-height: 100000px;
+}
 html {
 	font-size: 16px;
 }
 body {
 	font-family: Helvetica;
-	/*解决滚动、滑动时候页面卡*/
+	/*ios7下会有滑一下滑不动的情况,解决滚动、滑动时候页面卡*/
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
 	/*禁止横竖屏时内容自动调整大小*/
 	-webkit-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 	/*禁止选中文字*/
@@ -50,9 +45,8 @@ body {
 
 .yuansu {
 	webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
-	-o-transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 	/*开启GPU硬件加速之后，有些时候可能会导致浏览器频繁闪烁或抖动，可以尝试以下办法解决之：*/
 	-webkit-backface-visibility: hidden;
@@ -62,32 +56,28 @@ a {
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 }
-a:active,
-a:focus,
-input:active {
+a:active, a:focus, input:active {
 	outline: none;
 }
-button,
-input,
-textarea,
-input:active,
-input:focus,
-button,
-input:hover,
-input[type="button"] {
+button, input, textarea, input:active, input:focus, button, input:hover, input[type="button"] {
 	/*清除点击时的阴影*/
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	/*表单元素的默认外观重置*/
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
-	-webkit-border-radius: 0;
 	border-radius: 0;
 	outline: none;
+	box-sizing: border-box;
+	line-height: normal;
+	/*手机上的line-height不能写成和height的值一样，会出现再次输入光标靠上的现象*/
 }
 
 /*placeholder颜色*/
+
 ::-webkit-input-placeholder {
 	/* WebKit browsers*/
 	color: #aaaaaa;
@@ -113,6 +103,7 @@ input[disabled] {
 }
 
 /*android 上去掉语音输入按钮*/
+
 input::-webkit-input-speech-button {
 	display: none
 }
@@ -120,8 +111,7 @@ img {
 	border: 0;
 	/*禁止长按保存或拷贝图像-webkit-touch-callout: none;*/
 }
-ol,
-li {
+ol, li {
 	list-style: none;
 }
 .f-left {
@@ -138,7 +128,6 @@ li {
 	visibility: hidden;
 }
 .yuanjiao {
-	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
 .hide {
@@ -152,10 +141,10 @@ li {
 	width: 50%;
 	height: 50%;
 	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
-.tBor:before,
-.bBor:after {
+.tBor:before, .bBor:after {
 	position: absolute;
 	content: "";
 	height: 1px;
@@ -176,7 +165,9 @@ li {
 	width: 100%;
 	top: 0;
 }
+
 /*背景透明*/
+
 .touming {
 	background: rgba(0, 0, 0, 0.5) !important;
 	background: #000;
@@ -184,10 +175,12 @@ li {
 }
 
 /*渐变边框*/
+
 .border-jianbian {
 	border: 1px solid #ccc;
+	-webkit-border-image: -webkit-linear-gradient( #555, #ccc) 50 50;
 	border-image: -webkit-linear-gradient( #555, #ccc) 50 50;
-	border-image: -moz-linear-gradient( #555, #ccc) 50 50;
+	-o-border-image: linear-gradient( #555, #ccc) 50 50;
 	border-image: linear-gradient( #555, #ccc) 50 50;
 }
 

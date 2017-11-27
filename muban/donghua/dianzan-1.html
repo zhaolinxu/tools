@@ -25,18 +25,65 @@
 		<!--UC浏览器竖屏显示和全屏显示-->
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 		<link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
-		<title></title>
+		<title>点赞动画</title>
 		<style type="text/css">
+ body {
+            -webkit-user-select: none;
+        }
 
+        .wrapper {
+            width: 20px;
+            margin: 120px auto;
+            cursor: pointer;
+            color: grey;
+            font-size: 30px;
+            position: relative;
+        }
+
+        .wrapper.active:before {
+            content: "❤";
+            color: red;
+            transform: scale(2);
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: -40px;
+            animation: ani 1s forwards linear;
+        }
+
+        .wrapper.active {
+            color: red;
+        }
+
+        @keyframes ani {
+            20% {
+                transform: scale(2) translateY(-4px) rotate(4deg);
+                opacity: 0.8;
+            }
+
+            60% {
+                transform: scale(2) translateY(-12px) rotate(-8deg);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(2) translateY(-20px);
+                opacity: 0;
+            }
+        }
 		</style>
 	</head>
 
 	<body>
-
-	<script type="text/javascript">
-
-	</script>
-
+<div class="wrapper">
+    ❤
+</div>
+<script>
+    var oWrapper = document.querySelector('div');
+    oWrapper.onclick = function () {
+        this.classList.toggle('active');
+    }
+</script>
 	</body>
 
 </html>
