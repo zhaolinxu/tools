@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>test</title>
+        <style>
+            body,ul{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+                float: left;
+            }
+            li{
+                float: left;
+                display: inline-block;
+                width:100px;
+                height:50px;
+                text-align: center;
+                line-height: 50px;
+                background: #55bfce;
+                color:black;
+                cursor: pointer;
+            }
+            .slider{
+                width:100px;
+                left:0;
+                height:4px;
+                background: #de4723;
+                position: absolute;
+                bottom:0px;
+                transition:left .3s;
+            }
+            .item-1:hover ~.slider{
+            left: 0px;
+            }
+            .item-2:hover ~.slider{
+            left: 100px;
+            }
+            .item-3:hover ~.slider{
+            left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul style="position:relative;">
+                <li class="item-1">home</li>
+                <li class="item-2">news</li>
+                <li class="item-3">products</li>
+                <span class="slider"></span>    
+            </ul>
+        </div>
+    </body>
+</html>
