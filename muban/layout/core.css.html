@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="css" />
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例" />
+<title>Core.css-轻量级的CSS reset和栅格系统</title>
+<link rel="stylesheet" type="text/css" href="http://likexia.gitee.io/tools/lib/css/core.min.css">
+<style>
+.demo-title {padding: 1rem; text-align: center; color: #FFF; background: #000;}
+.demo-subtitle {font-style: italic; opacity: .5;}
+
+/* #hide-show */
+
+#hide-show {padding: .5rem;}
+#hide-show .row {padding: .5rem;}
+#hide-show .col {padding: 1rem;}
+
+#hide-show .col .text,
+#hide-show .col:hover .classes {display: inline;}
+
+#hide-show .col .classes,
+#hide-show .col:hover .text {display: none;}
+
+#hide-show .hidden {color: #808080; background: rgba(211,211,211,.5);}
+#hide-show .visible {color: #008000; background: rgba(144,238,144,.5);}
+
+
+#hide-show hr {margin: .5rem; border-bottom: 1px solid rgba(0,0,0,.25)}
+
+/* #row-max-width */
+
+#row-max-width {padding: .5rem;}
+#row-max-width .row {padding: .5rem;}
+#row-max-width .col {padding: 1rem;}
+
+#row-max-width .row {text-align: center;}
+#row-max-width .col {color: gray; background: rgba(211,211,211,.5);}
+
+#row-max-width .col .text,
+#row-max-width .col:hover .classes {display: inline;}
+
+#row-max-width .col .classes,
+#row-max-width .col:hover .text {display: none;}
+
+/* #basic-grid */
+
+#basic-grid {padding: .5rem;}
+#basic-grid .col {padding: .5rem;}
+#basic-grid .content {height: 3.5rem;; background: rgba(211,211,211,.5);}
+
+/* #responsive-grid */
+
+#responsive-grid .row {padding: .5rem;}
+#responsive-grid .col {padding: .5rem;}
+#responsive-grid .content {height: 3.5rem; background: rgba(211,211,211,.5);}
+</style>
+</head>
+<body>
+
+
+    <div id="basic-grid">
+    <p>基本</p>
+        <div class="row">
+            <div class="col xs-1"><div class="content"></div></div>
+            <div class="col xs-11"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-2"><div class="content"></div></div>
+            <div class="col xs-10"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-3"><div class="content"></div></div>
+            <div class="col xs-9"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-4"><div class="content"></div></div>
+            <div class="col xs-8"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-5"><div class="content"></div></div>
+            <div class="col xs-7"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-6"><div class="content"></div></div>
+            <div class="col xs-6"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-7"><div class="content"></div></div>
+            <div class="col xs-5"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-8"><div class="content"></div></div>
+            <div class="col xs-4"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-9"><div class="content"></div></div>
+            <div class="col xs-3"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-10"><div class="content"></div></div>
+            <div class="col xs-2"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-11"><div class="content"></div></div>
+            <div class="col xs-1"><div class="content"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="col xs-12"><div class="content"></div></div>
+        </div>
+
+    </div>
+
+<div id="responsive-grid">
+    <p>响应式</p>
+    <div class="row xl">
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+        <div class="col xs-12 sm-6 md-4 lg-3 xl-2"><div class="content"></div></div>
+    </div>
+
+</div>
+<div id="row-max-width">
+    <p>最大宽度</p>
+    <div class="row">
+        <div class="col xs-12">
+            <span class="text">Row with no max-width</span>
+            <span class="classes">.row</span>
+        </div>
+    </div>
+
+    <div class="row xl">
+        <div class="col xs-12">
+            <span class="text">Row with XL max-width</span>
+            <span class="classes">.row .xl</span>
+        </div>
+    </div>
+
+    <div class="row lg">
+        <div class="col xs-12">
+            <span class="text">Row with LG max-width</span>
+            <span class="classes">.row .lg</span>
+        </div>
+    </div>
+
+    <div class="row md">
+        <div class="col xs-12">
+            <span class="text">Row with MD max-width</span>
+            <span class="classes">.row .md</span>
+        </div>
+    </div>
+
+    <div class="row sm">
+        <div class="col xs-12">
+            <span class="text">Row with SM max-width</span>
+            <span class="classes">.row .sm</span>
+        </div>
+    </div>
+
+    <div class="row xs">
+        <div class="col xs-12">
+            <span class="text">Row with XS max-width</span>
+            <span class="classes">.row .xs</span>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
