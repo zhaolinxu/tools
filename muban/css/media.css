@@ -1,0 +1,117 @@
+/*** 基本参数说明
+*
+* devicePixelRatio => 视网膜设备:2 | 无视网膜设备:1
+* device => max-device-width:匹配设备：横竖屏转换、尺寸缩放均不会发生变化 | max-width:匹配窗口：大小改变、横竖屏转换会发生变化
+* landscape => 横屏
+* portrait => 竖屏
+*
+* ****/
+
+// iphone4 && iphone4s
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {竖屏}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {横屏}
+
+// iPhone5 && iPhone5s && iPhone5c && iPhoneSE
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {竖屏}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {横屏}
+
+// iPhone6 && iPhone6s iPhone7
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {竖屏}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {横屏}
+
+// iPhone 6+ && iPhone6s+ && iPhone7+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {竖屏}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {横屏}
+
+// Galaxy S3
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {}
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {竖屏}
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {横屏}
+
+// HTC One
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {}
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {竖屏}
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {横屏}
+
+// iPad mini
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {竖屏}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {横屏}
+
+//  iPad 1 && iPad 2
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {竖屏}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {横屏}
+
+//  iPad 3 && iPad 4
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {竖屏}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {横屏}
+
+// Galaxy Tab 10.1
+@media (min-device-width: 800px) and (max-device-width: 1280px) {}
+@media (max-device-width: 800px) and (orientation: portrait) {竖屏}
+@media (max-device-width: 1280px) and (orientation: landscape) {横屏}
+
+// Asus Nexus 7
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) {}
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) and (orientation: portrait) {竖屏}
+@media screen and (device-width: 601px) and (device-height: 906px) and (-webkit-min-device-pixel-ratio: 1.331) and (-webkit-max-device-pixel-ratio: 1.332) and (orientation: landscape) {横屏}
+
+// Kindle Fire HD 7
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) {}
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {竖屏}
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {横屏}
+
+// Kindle Fire HD 8.9
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.5) {}
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) {竖屏}
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {横屏}
+
+// 笔记本
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {非视网膜屏}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {视网膜屏}
+
+// 台式机
+@media only screen and (min-width : 1224px) {}
+
+// 超大屏
+@media only screen and (min-width : 1824px) {}
+
+// Apple Watch
+@media (max-device-width: 42mm) and (min-device-width: 38mm) {}
+
+// Moto 360 Watch
+@media (max-device-width: 218px) and (max-device-height: 281px) {}
+
+// Bootstrap媒体查询
+@media (max-width: 768px) {}
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}
+// Bootstrap范围查询
+@media (max-width: 767px) {}
+@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 1200px) {}
+
+/*########## min版（整理） ##########*/
+@media only screen and (max-device-width: 320px) { html { font-size: 12px !important; } }
+// iphone4 && iphone4s && iPhone5 && iPhone5s && iPhone5c && iPhoneSE
+@media only screen and (min-device-width: 320px) { html { font-size: 14px !important; } }
+// iPhone6 && iPhone6s iPhone7
+@media only screen and (min-device-width: 375px) { html { font-size: 16px !important; } }
+// iPhone 6+ && iPhone6s+ && iPhone7+
+@media only screen and (min-device-width: 414px) { html { font-size: 18px !important; } }
+// 平板
+@media only screen and (min-device-width: 768px) { html { font-size: 20px !important; } }
+// 笔记本
+@media screen and (min-device-width: 1200px) { html { font-size: 22px !important; } }
+// 台式机
+@media only screen and (min-width : 1224px) { html { font-size: 24px !important; } }
+// 超大屏
+@media only screen and (min-width : 1824px) { html { font-size: 26px !important; } }
