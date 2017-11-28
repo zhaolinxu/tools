@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head><link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
+		<meta charset="utf-8">
+		<!--自动刷新，1s=1-->
+		<!--<META http-equiv="Refresh" content="3">-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		<meta http-equiv="X-UA-Compatible" cotent="IE=edge,chrome=1" />
+		<!--禁止缓存-测试时用-->
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<!--禁止缓存-测试时用-->
+		<!--禁止禁止识别电话号码和邮件-->
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!--禁止禁止识别电话号码和邮件-->
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<!--x5内核浏览器包括：QQ浏览器，qq,微信内置的浏览器（ 竖屏显示、以及全屏显示）-->
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<!--UC浏览器竖屏显示和全屏显示-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
+		<title>CSS3：linear-gradient切角画册</title>
+		<style type="text/css">
+		body{background:#eee}
+.tucked-corners-top *{
+    padding:0;
+    margin:0;
+    font-family:"Microsoft YaHei";
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
+.tucked-corners-top img{max-width:100%;}
+.tucked-corners-top {
+    position: relative;
+    width: 500px;
+    min-height: 200px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    background: 
+        -webkit-linear-gradient(45deg, transparent 10px,  #fff 10px), 
+        -webkit-linear-gradient(135deg, transparent 10px, #fff 10px), 
+        -webkit-linear-gradient(225deg, transparent 10px, #fff 10px), 
+        -webkit-linear-gradient(315deg, transparent 10px, #fff 10px);
+    background: 
+        -moz-linear-gradient(45deg, transparent 10px,  #fff 10px), 
+        -moz-linear-gradient(135deg, transparent 10px, #fff 10px), 
+        -moz-linear-gradient(225deg, transparent 10px, #fff 10px), 
+        -moz-linear-gradient(315deg, transparent 10px, #fff 10px);
+    background: 
+        -o-linear-gradient(45deg, transparent 10px,  #fff 10px), 
+        -o-linear-gradient(135deg, transparent 10px, #fff 10px), 
+        -o-linear-gradient(225deg, transparent 10px, #fff 10px), 
+        -o-linear-gradient(315deg, transparent 10px, #fff 10px);
+    background-position: bottom left, bottom right, top right, top left;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    -moz-box-shadow: 0 20px 10px -20px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 20px 10px -20px rgba(0, 0, 0, .5);
+    box-shadow: 0 20px 10px -20px rgba(0, 0, 0, .5);
+} 
+[class*='tucked-corners-']::before,
+[class*='tucked-corners-']::after {
+    content: '';
+    position: absolute;
+    height: 20px; width: 80px;
+    -webkit-box-shadow: 0 8px 15px -7px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 8px 15px -7px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 15px -7px rgba(0, 0, 0, .5);
+    box-shadow: none\9; /* Do not show on IE9 #needed */            
+}
+
+.tucked-corners-top::before,
+.tucked-corners-top::after {
+    top: -10px;
+}
+
+.tucked-corners-bottom::before,
+.tucked-corners-bottom::after {
+    bottom: -10px;
+}       
+
+.tucked-corners-top::before,
+.tucked-corners-bottom::before {
+    left: -42px;
+}
+
+.tucked-corners-top::after,
+.tucked-corners-bottom::after {
+    right: -42px;
+}
+
+.tucked-corners-top::before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.tucked-corners-top::after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);           
+}
+
+.tucked-corners-bottom::before {
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.tucked-corners-bottom::after {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+		</style>
+	</head>
+
+	<body>
+<div class="tucked-corners-top">
+    <div class="tucked-corners-bottom"><img src="http://img.hb.aicdn.com/acc61cc384ca8f450a92056c8d1fd0592a94662d1a16b-Pmp6Fg_fw658" alt=""></div>
+</div></div>
+
+	<script type="text/javascript">
+
+	</script>
+
+	</body>
+
+</html>
