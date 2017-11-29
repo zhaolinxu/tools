@@ -27,15 +27,37 @@
 		<link rel="shortcut icon" href="http://likexia.gitee.io/tools/lib/img/h5.png" type="image/x-icon">
 		<title>屏幕尺寸检测工具</title>
 		<style type="text/css">
-
+*{margin: 0;padding: 0;}
+body{height: 2300px}
 		</style>
 	</head>
 
 	<body>
+	<div id="div"></div>
 
-	<script type="text/javascript">
-
-	</script>
+	<script language="javascript">
+        var s = "";
+        s += "<br>设备屏幕分辨率的宽："+ window.screen.width;
+        s += "<br>设备屏幕分辨率的高："+ window.screen.height;
+        s += "<br>【仅微信】标题栏高度（电脑无视）："+ (window.screen.height - window.innerHeight);
+        s += "<br>【仅微信】页面内容部分高度（减去标题栏）：" + window.innerHeight;
+        s += "<br>网页可见区域宽："+ document.body.offsetWidth +" (包括边线和滚动条的宽？应该是减去滚动条宽度之后的网页内容宽度)";
+        s += "<br>网页可见区域高："+ document.body.offsetHeight +" (包括边线的宽)";
+        // s += "<br>屏幕可用工作区宽度："+ window.screen.availWidth;
+        // s += "<br>屏幕可用工作区高度："+ window.screen.availHeight;
+        // s += "<br>网页内容部分滚动宽度："+ document.body.scrollWidth;
+        // s += "<br>网页内容部分滚动高度："+ document.body.scrollHeight;
+        // s += "<br>网页可见区域宽："+ document.body.clientWidth;
+        // s += "<br>网页可见区域高："+ document.body.clientHeight;
+        // s += "<br>网页滚动的顶部距离："+ document.body.scrollTop;
+        // s += "<br>网页滚动的左边距离："+ document.body.scrollLeft;
+        // s += "<br>相对网页左上角上偏移："+ window.screenTop;
+        // s += "<br>相对网页左上角左偏移："+ window.screenLeft;
+        // s += "<br>你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色";
+        // s += "<br>你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸";
+        // document.write(s);
+        document.getElementById("div").innerHTML=s;
+    </script>
 
 	</body>
 
