@@ -12,5 +12,4 @@ body { background: #eee; }
 .float_layer .close:hover { background: url("http://likexia.gitee.io/tools/lib/ad/rb_ad/close.gif") no-repeat 0 0; }
 .float_layer .content { height: auto; overflow: hidden; font-size: 14px; line-height: 18px; color: #666; }
 .float_layer .wrap { padding: 5px; }
-.ad-img{width: 100%;}
 /*右下角广告 end*/
