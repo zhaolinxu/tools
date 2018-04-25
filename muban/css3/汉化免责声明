@@ -1,0 +1,13 @@
+function cnbing(h){
+    //汉化城市类型（敌对、等）
+    var cnb = "";
+    var temp = h;
+    if (temp == "The Keeper") {
+        cnb = "守护者";
+    } else if (temp == "Phantids Defence Fleet") {
+        cnb = "芬提斯防御舰队";
+    }  else {
+        return h;
+    }
+    return cnb;
+}
