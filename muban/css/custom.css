@@ -44,7 +44,7 @@ body {
 /*开启GPU硬件加速，css3动画*/
 
 .yuansu {
-	webkit-transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
@@ -114,7 +114,10 @@ input::-webkit-input-speech-button {
 }
 img {
 	border: 0;
-	/*禁止长按保存或拷贝图像-webkit-touch-callout: none;*/
+	/*禁止微信里面点图片弹出预览*/
+	pointer-events: none;
+	/*禁止长按保存或拷贝图像*/
+	-webkit-touch-callout: none;
 }
 ol, li {
 	list-style: none;
